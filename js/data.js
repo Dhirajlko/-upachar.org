@@ -5,6 +5,7 @@
 
 const UPACHAR_DATA = {
   contact: {
+    tagline: "UPACHAR — Healthcare Made Simple",
     email: "upachar.org@gmail.com",
     phoneNepal: "+977 9848094547",
     phoneIndia: "+91 7459977911",
@@ -16,6 +17,7 @@ const UPACHAR_DATA = {
 
   translations: {
     en: {
+      brandTagline: "Healthcare Made Simple",
       navHome: "Home",
       navServices: "Our Services",
       navCostSearch: "Treatment & Surgery Costs",
@@ -29,9 +31,9 @@ const UPACHAR_DATA = {
       btnCallIndia: "Call India: +91 7459977911",
       btnCallNepal: "Call Nepal: +977 9848094547",
       btnWhatsApp: "WhatsApp Us",
-      heroBadge: "🏆 #1 Trusted Treatment & Surgery Cost Comparison in India & Nepal",
+      heroBadge: "🏆 UPACHAR — Healthcare Made Simple",
       heroTitle: "Hospital Care Quality at the Comfort of Your Home & Hospital",
-      heroSubtitle: "Upachar brings qualified ICU nurses, experienced doctors, medical equipment, lab diagnostics, and hospital surgery cost comparison across Delhi, Lucknow, & Kathmandu.",
+      heroSubtitle: "UPACHAR brings qualified ICU nurses, experienced doctors, medical equipment, lab diagnostics, and hospital surgery cost comparison across Delhi, Lucknow, & Kathmandu.",
       heroCTA: "Book Online Appointment",
       heroCompare: "Compare Surgery Costs",
       statPatients: "15,000+",
@@ -111,11 +113,12 @@ const UPACHAR_DATA = {
       tabDiagnostics: "Diagnostics @ Home",
       tabPhysio: "Physiotherapy @ Home",
 
-      whyChooseTitle: "Why Families Trust Upachar.org",
+      whyChooseTitle: "Why Families Trust UPACHAR",
       faqTitle: "Frequently Asked Questions",
-      copyRight: "© 2026 Upachar Home Healthcare Services (upachar.org). All rights reserved."
+      copyRight: "© 2026 UPACHAR — Healthcare Made Simple (upachar.org). All rights reserved."
     },
     hi: {
+      brandTagline: "Healthcare Made Simple (स्वास्थ्य सेवा हुई आसान)",
       navHome: "होम",
       navServices: "हमारी सेवाएं",
       navCostSearch: "इलाज एवं सर्जरी की लागत",
@@ -129,7 +132,7 @@ const UPACHAR_DATA = {
       btnCallIndia: "भारत: +91 7459977911",
       btnCallNepal: "नेपाल: +977 9848094547",
       btnWhatsApp: "व्हाट्सएप करें",
-      heroBadge: "🏆 भारत एवं नेपाल में #1 विश्वसनीय इलाज व सर्जरी लागत तुलना",
+      heroBadge: "🏆 UPACHAR — Healthcare Made Simple (स्वास्थ्य सेवा हुई आसान)",
       heroTitle: "अस्पताल जैसी गुणवत्तापूर्ण देखभाल, अब आपके घर एवं अस्पताल में",
       heroSubtitle: "उपचार आपके घर पर 24/7 योग्य आईसीयू नर्स, डॉक्टर और दिल्ली, लखनऊ व काठमांडू के अस्पतालों की सर्जरी लागत तुलना प्रदान करता है।",
       heroCTA: "ऑनलाइन अपॉइंटमेंट बुक करें",
@@ -204,7 +207,7 @@ const UPACHAR_DATA = {
 
       whyChooseTitle: "परिवार उपचार पर भरोसा क्यों करते हैं?",
       faqTitle: "अक्सर पूछे जाने वाले प्रश्न (FAQ)",
-      copyRight: "© 2026 उपचार होम हेल्थकेयर (upachar.org)। सर्वाधिकार सुरक्षित।"
+      copyRight: "© 2026 UPACHAR — Healthcare Made Simple (upachar.org)। सर्वाधिकार सुरक्षित।"
     }
   },
 
