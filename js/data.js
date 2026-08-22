@@ -1,6 +1,6 @@
 /**
- * Upachar.org Data & Internationalization (English & Hindi)
- * Home Healthcare Services & Cost Database
+ * Upachar.org Data & Internationalization
+ * Treatment & Surgery Cost Comparison Database (India & Nepal)
  */
 
 const UPACHAR_DATA = {
@@ -10,7 +10,7 @@ const UPACHAR_DATA = {
     phoneIndia: "+91 7459977911",
     whatsappNepal: "9779848094547",
     whatsappIndia: "917459977911",
-    address: "Upachar Home Healthcare Center, Serving India & Nepal Doorstep Healthcare",
+    address: "Upachar Home Healthcare & Medical Referral Center, Serving India & Nepal",
     hours: "24 Hours / 7 Days Available"
   },
 
@@ -18,7 +18,7 @@ const UPACHAR_DATA = {
     en: {
       navHome: "Home",
       navServices: "Our Services",
-      navCostSearch: "Cost Comparison",
+      navCostSearch: "Treatment & Surgery Costs",
       navAppointment: "Online Appointment",
       navSampleCollection: "Home Sample Collection",
       navAbout: "Why Upachar",
@@ -29,11 +29,11 @@ const UPACHAR_DATA = {
       btnCallIndia: "Call India: +91 7459977911",
       btnCallNepal: "Call Nepal: +977 9848094547",
       btnWhatsApp: "WhatsApp Us",
-      heroBadge: "🏆 #1 Trusted Home Healthcare in India & Nepal",
-      heroTitle: "Hospital Care Quality at the Comfort of Your Home",
-      heroSubtitle: "Upachar brings qualified ICU nurses, experienced doctors, doorstep lab sample collection, medical equipment, and physiotherapists directly to your home 24/7.",
+      heroBadge: "🏆 #1 Trusted Treatment & Surgery Cost Comparison in India & Nepal",
+      heroTitle: "Hospital Care Quality at the Comfort of Your Home & Hospital",
+      heroSubtitle: "Upachar brings qualified ICU nurses, experienced doctors, medical equipment, lab diagnostics, and hospital surgery cost comparison across Delhi, Lucknow, & Kathmandu.",
       heroCTA: "Book Online Appointment",
-      heroCompare: "Compare Care Costs",
+      heroCompare: "Compare Surgery Costs",
       statPatients: "15,000+",
       statPatientsLabel: "Happy Patients Served",
       statNurses: "250+",
@@ -43,36 +43,64 @@ const UPACHAR_DATA = {
       statRating: "4.9 ★",
       statRatingLabel: "Patient Satisfaction",
 
-      // Cost Comparison Section
-      costTitle: "Search & Compare Care Costs",
-      costSubtitle: "Transparent pricing for all home nursing, doctor visits, diagnostic tests & medical equipment rentals.",
-      searchPlaceholder: "Search services or tests (e.g., Catheter, Oxygen, ECG, CBC, Doctor Visit, Physio)...",
-      colService: "Service / Test Name",
-      colCategory: "Category",
-      colEstCost: "Est. Cost / Package",
-      colInclusions: "What's Included",
-      colAction: "Book Service",
+      // Surgery & Treatment Cost Section
+      surgeryTitle: "Search & Compare Your Treatment & Surgery Cost",
+      surgerySubtitle: "Find the Right Treatment. Compare Hospitals. Know the Estimated Cost across Delhi, Lucknow, and Kathmandu.",
+      
+      // How It Works
+      how1Title: "1. Search Your Treatment",
+      how1Desc: "Enter the name of your treatment, surgery, procedure, or medical condition (e.g. Knee Replacement, Cataract, Heart Bypass).",
+      how2Title: "2. Compare Treatment Costs",
+      how2Desc: "Compare estimated costs, hospital charges, surgeon fees, room options, diagnostic costs, and pre/post-treatment packages.",
+      how3Title: "3. Compare Hospitals & Specialists",
+      how3Desc: "Explore top accredited hospitals across Delhi, Lucknow, and Kathmandu with specialist profiles and facilities.",
+      how4Title: "4. Request a Personalized Quote",
+      how4Desc: "Submit your medical reports to receive a customized treatment cost estimate from senior medical specialists.",
+      how5Title: "5. Make an Informed Decision",
+      how5Desc: "Understand your options clearly to choose the treatment plan that fits your health needs and budget.",
 
-      // Home Sample Collection Section
-      sampleTitle: "Home Sample Collection",
-      sampleSubtitle: "Certified phlebotomists collect blood & urine samples right at your doorstep. 100% sterile single-use kits.",
-      sampleFeature1Title: "100% Sterile & Safe",
-      sampleFeature1Desc: "Single-use sealed vacutainers and needles used for every patient.",
-      sampleFeature2Title: "Fast Digital Reports",
-      sampleFeature2Desc: "NABL lab verified reports delivered on your WhatsApp & Email within 12-24 hours.",
-      sampleFeature3Title: "Convenient Time Slots",
-      sampleFeature3Desc: "Choose your preferred morning or evening sample pickup time at home.",
+      // Why Compare
+      whyBudget: "Understand Your Budget",
+      whyBudgetDesc: "Get a clear estimate of treatment expenses before travelling or scheduling your procedure.",
+      whyHospitals: "Compare Hospitals",
+      whyHospitalsDesc: "Review multiple hospital options instead of relying on a single quotation.",
+      whySpecialists: "Find Specialists",
+      whySpecialistsDesc: "Explore experienced surgeons and specialists relevant to your condition.",
+      whyDestinations: "Compare Destinations",
+      whyDestinationsDesc: "Compare estimated costs across Delhi, Lucknow, and Kathmandu (India & Nepal).",
+      whyInclusions: "Understand Package Inclusions",
+      whyInclusionsDesc: "Check what is covered in each package and identify excluded or additional expenses.",
 
-      // Appointment Form
-      appointmentTitle: "Book Online Appointment",
-      appointmentSubtitle: "Select your preferred date, time slot, and healthcare service for doorstep delivery.",
-      fieldService: "Select Required Service / Test",
-      fieldName: "Patient / Contact Name",
-      fieldPhone: "Mobile Number (WhatsApp)",
-      fieldLocation: "Complete Address / City",
-      fieldDate: "Preferred Appointment Date",
-      fieldSlot: "Preferred Time Slot",
-      fieldNotes: "Medical Condition / Notes",
+      // Search & Table
+      selectTreatment: "Select Treatment / Surgery",
+      selectCity: "Select City / Country",
+      allTreatments: "All Treatments & Surgeries",
+      allCities: "All Cities (Delhi, Lucknow, Kathmandu)",
+      btnSearchCompare: "Search & Compare",
+
+      // Table Headers
+      colTreatment: "Treatment / Surgery",
+      colHospital: "Hospital / Center",
+      colLocation: "Location / City",
+      colCost: "Estimated Cost",
+      colPackage: "Package Details",
+
+      // Quote Form
+      quoteTitle: "Get Your Personalized Treatment Estimate",
+      quoteSubtitle: "Every patient is unique. Submit your details & medical reports to receive an exact quotation.",
+      labelPatientName: "Patient Name",
+      labelAge: "Patient Age",
+      labelCountryCity: "Country / City",
+      labelTreatmentReq: "Treatment / Surgery Required",
+      labelPrefHospital: "Preferred Hospital / City",
+      labelMedicalReports: "Upload Medical Reports (Optional)",
+      labelContactNo: "Contact Number",
+      labelEmailWA: "Email or WhatsApp Number",
+      labelPrefDate: "Preferred Date of Treatment",
+      btnRequestQuote: "Request My Treatment Estimate",
+
+      disclaimerTitle: "Important Medical Disclaimer",
+      disclaimerText: "The costs displayed on this platform are estimated or indicative costs for informational purposes only and should not be considered a final medical quotation. Actual treatment costs may vary depending on the patient's diagnosis, medical condition, treatment protocol, investigations, medicines, complications, length of hospital stay, doctor fees, and other factors. A final treatment plan and quotation must be obtained directly from the treating hospital or qualified healthcare provider.",
 
       servicesHeading: "Comprehensive Care at Home Services",
       servicesSubheading: "Professional medical treatments provided in the safety and comfort of your home.",
@@ -90,7 +118,7 @@ const UPACHAR_DATA = {
     hi: {
       navHome: "होम",
       navServices: "हमारी सेवाएं",
-      navCostSearch: "कीमत तुलना एवं खोज",
+      navCostSearch: "इलाज एवं सर्जरी की लागत",
       navAppointment: "ऑनलाइन अपॉइंटमेंट",
       navSampleCollection: "घर पर सैंपल कलेक्शन",
       navAbout: "उपचार क्यों?",
@@ -101,50 +129,69 @@ const UPACHAR_DATA = {
       btnCallIndia: "भारत: +91 7459977911",
       btnCallNepal: "नेपाल: +977 9848094547",
       btnWhatsApp: "व्हाट्सएप करें",
-      heroBadge: "🏆 भारत एवं नेपाल में #1 विश्वसनीय होम हेल्थकेयर",
-      heroTitle: "अस्पताल जैसी गुणवत्तापूर्ण देखभाल, अब आपके घर पर",
-      heroSubtitle: "उपचार आपके घर पर 24/7 योग्य आईसीयू नर्स, अनुभवी डॉक्टर, घर पर लैब ब्लड टेस्ट सैंपल कलेक्शन, मेडिकल उपकरण और फिजियोथेरेपिस्ट प्रदान करता है।",
+      heroBadge: "🏆 भारत एवं नेपाल में #1 विश्वसनीय इलाज व सर्जरी लागत तुलना",
+      heroTitle: "अस्पताल जैसी गुणवत्तापूर्ण देखभाल, अब आपके घर एवं अस्पताल में",
+      heroSubtitle: "उपचार आपके घर पर 24/7 योग्य आईसीयू नर्स, डॉक्टर और दिल्ली, लखनऊ व काठमांडू के अस्पतालों की सर्जरी लागत तुलना प्रदान करता है।",
       heroCTA: "ऑनलाइन अपॉइंटमेंट बुक करें",
-      heroCompare: "लागत/कीमत की तुलना करें",
-      statPatients: "15,000+",
-      statPatientsLabel: "संतुष्ट मरीज",
-      statNurses: "250+",
-      statNursesLabel: "प्रमाणित नर्स व डॉक्टर",
-      statCities: "24/7",
-      statCitiesLabel: "इमरजेंसी सपोर्ट",
-      statRating: "4.9 ★",
-      statRatingLabel: "मरीज रेटिंग",
+      heroCompare: "सर्जरी की लागत तुलना करें",
 
-      // Cost Comparison Section
-      costTitle: "सेवाओं एवं जांचों की कीमत तुलना और खोज",
-      costSubtitle: "नर्सिंग, डॉक्टर विजिट, लैब टेस्ट और मेडिकल उपकरणों की पारदर्शी दरें।",
-      searchPlaceholder: "सेवा या जांच खोजें (जैसे कैथेटर, ऑक्सीजन, ईसीजी, ब्लड टेस्ट, डॉक्टर विजिट)...",
-      colService: "सेवा / जांच का नाम",
-      colCategory: "श्रेणी",
-      colEstCost: "अनुमानित दर / शुल्क",
-      colInclusions: "शामिल प्रक्रियाएं",
-      colAction: "बुकिंग करें",
+      // Surgery & Treatment Cost Section
+      surgeryTitle: "अपने इलाज एवं सर्जरी की लागत खोजें और तुलना करें",
+      surgerySubtitle: "सही इलाज खोजें। अस्पतालों की तुलना करें। दिल्ली, लखनऊ और काठमांडू में अनुमानित लागत जानें।",
 
-      // Home Sample Collection Section
-      sampleTitle: "घर पर सैंपल कलेक्शन (Home Sample Collection)",
-      sampleSubtitle: "प्रमाणित लैब तकनीशियन द्वारा आपके घर पर सुरक्षित ब्लड और यूरिन सैंपल कलेक्शन। 100% स्टेराइल किट।",
-      sampleFeature1Title: "100% सुरक्षित और जीवाणुरहित",
-      sampleFeature1Desc: "हर मरीज के लिए नई सीलबंद सुई और वाकुटेनर किट का उपयोग।",
-      sampleFeature2Title: "व्हाट्सएप पर तेज़ रिपोर्ट",
-      sampleFeature2Desc: "NABL लैब द्वारा जांच रिपोर्ट 12 से 24 घंटे में आपके व्हाट्सएप और ईमेल पर।",
-      sampleFeature3Title: "सुविधानुसार समय स्लॉट",
-      sampleFeature3Desc: "अपनी सुविधानुसार सुबह या शाम के समय का स्लॉट चुनें।",
+      // How It Works
+      how1Title: "1. अपना इलाज/सर्जरी खोजें",
+      how1Desc: "अपने इलाज, सर्जरी या बीमारी का नाम दर्ज करें (जैसे नी रिप्लेसमेंट, मोतियाबिंद, हार्ट बायपास, पथरी का इलाज)।",
+      how2Title: "2. इलाज की लागत की तुलना करें",
+      how2Desc: "अस्पताल शुल्क, सर्जन फीस, कमरे का किराया, पैथोलॉजी और पैकेज में शामिल सुविधाओं की तुलना करें।",
+      how3Title: "3. अस्पताल और विशेषज्ञों की तुलना करें",
+      how3Desc: "दिल्ली, लखनऊ और काठमांडू के प्रमुख मान्यता प्राप्त अस्पतालों और वरिष्ठ विशेषज्ञों की प्रोफाइल देखें।",
+      how4Title: "4. पर्सनल कोटेशन (अनुमानित खर्च) मांगें",
+      how4Desc: "वरिष्ठ डॉक्टरों से व्यक्तिगत इलाज अनुमान प्राप्त करने के लिए अपनी मेडिकल रिपोर्ट जमा करें।",
+      how5Title: "5. एक सूचित निर्णय लें",
+      how5Desc: "अपनी स्वास्थ्य आवश्यकताओं और बजट के अनुसार सही अस्पताल और इलाज का विकल्प चुनें।",
 
-      // Appointment Form
-      appointmentTitle: "ऑनलाइन अपॉइंटमेंट बुक करें",
-      appointmentSubtitle: "अपने घर पर विजिट के लिए अपनी पसंदीदा तिथि, समय और सेवा चुनें।",
-      fieldService: "आवश्यक सेवा / जांच चुनें",
-      fieldName: "मरीज / आवेदक का नाम",
-      fieldPhone: "मोबाइल नंबर (व्हाट्सएप)",
-      fieldLocation: "पूरा पता / शहर",
-      fieldDate: "अपॉइंटमेंट की तिथि",
-      fieldSlot: "पसंदीदा समय स्लॉट",
-      fieldNotes: "बीमारी/स्थिति का विवरण",
+      // Why Compare
+      whyBudget: "अपने बजट को समझें",
+      whyBudgetDesc: "इलाज या सर्जरी कराने से पहले संभावित खर्चों का स्पष्ट अनुमान प्राप्त करें।",
+      whyHospitals: "विभिन्न अस्पतालों की तुलना करें",
+      whyHospitalsDesc: "केवल एक उद्धरण (Quotation) पर निर्भर रहने के बजाय कई अस्पतालों की समीक्षा करें।",
+      whySpecialists: "विशेषज्ञ डॉक्टर खोजें",
+      whySpecialistsDesc: "अपनी बीमारी से संबंधित अनुभवी सर्जन और डॉक्टरों की खोज करें।",
+      whyDestinations: "विभिन्न शहरों और देशों की तुलना करें",
+      whyDestinationsDesc: "दिल्ली, लखनऊ और काठमांडू (भारत व नेपाल) के बीच इलाज की लागत की तुलना करें।",
+      whyInclusions: "पैकेज में क्या शामिल है जानें",
+      whyInclusionsDesc: "जांचें कि प्रत्येक पैकेज में क्या शामिल है और कौन से अतिरिक्त खर्च हो सकते हैं।",
+
+      // Search & Table
+      selectTreatment: "इलाज / सर्जरी चुनें",
+      selectCity: "शहर / देश चुनें",
+      allTreatments: "सभी इलाज और सर्जरीज",
+      allCities: "सभी शहर (दिल्ली, लखनऊ, काठमांडू)",
+      btnSearchCompare: "खोजें और तुलना करें",
+
+      colTreatment: "इलाज / सर्जरी",
+      colHospital: "अस्पताल / मेडिकल सेंटर",
+      colLocation: "स्थान / शहर",
+      colCost: "अनुमानित लागत (Est. Cost)",
+      colPackage: "पैकेज विवरण",
+
+      // Quote Form
+      quoteTitle: "अपना व्यक्तिगत इलाज अनुमान (Personalized Quote) प्राप्त करें",
+      quoteSubtitle: "हर मरीज अलग होता है। सटीक अनुमान प्राप्त करने के लिए अपना विवरण और मेडिकल रिपोर्ट सबमिट करें।",
+      labelPatientName: "मरीज का नाम",
+      labelAge: "मरीज की उम्र",
+      labelCountryCity: "देश / शहर",
+      labelTreatmentReq: "आवश्यक इलाज / सर्जरी",
+      labelPrefHospital: "पसंदीदा अस्पताल / शहर",
+      labelMedicalReports: "मेडिकल रिपोर्ट अपलोड करें (वैकल्पिक)",
+      labelContactNo: "संपर्क नंबर",
+      labelEmailWA: "ईमेल या व्हाट्सएप नंबर",
+      labelPrefDate: "इलाज की पसंदीदा तिथि",
+      btnRequestQuote: "मेरा इलाज अनुमान प्राप्त करें",
+
+      disclaimerTitle: "महत्वपूर्ण चिकित्सा अस्वीकरण (Medical Disclaimer)",
+      disclaimerText: "इस प्लेटफॉर्म पर प्रदर्शित लागत केवल सूचनात्मक उद्देश्यों के लिए अनुमानित है और इसे अंतिम चिकित्सा उद्धरण (Final Medical Quote) नहीं माना जाना चाहिए। वास्तविक इलाज की लागत मरीज के निदान, चिकित्सा स्थिति, दवाओं, अस्पताल में रहने की अवधि और डॉक्टर की फीस के आधार पर भिन्न हो सकती है।",
 
       servicesHeading: "घर पर संपूर्ण स्वास्थ्य देखभाल सेवाएं",
       servicesSubheading: "आपके घर की सुरक्षा और आराम में पेशेवर चिकित्सा उपचार।",
@@ -161,7 +208,179 @@ const UPACHAR_DATA = {
     }
   },
 
-  // Database of Services & Costs for Search & Comparison
+  // DATABASE OF SURGERY & TREATMENT COSTS (Delhi, Lucknow, Kathmandu)
+  surgeryDatabase: [
+    {
+      id: "s1",
+      treatmentEn: "Knee Replacement (Total Knee Arthroplasty)",
+      treatmentHi: "नी रिप्लेसमेंट (घुटने का प्रत्यारोपण)",
+      hospital: "Apollo Specialty / Max Healthcare",
+      location: "Delhi, India",
+      cityKey: "delhi",
+      costFormatted: "₹ 1,85,000 - ₹ 2,40,000",
+      costNum: 185000,
+      currency: "INR",
+      specialist: "Senior Orthopaedic Surgeon",
+      inclusionsEn: "Implant cost, 4 days ICU/room stay, surgeon fee, physio session",
+      inclusionsHi: "इम्प्लांट लागत, 4 दिन कमरा शुल्क, सर्जन फीस, फिजियो सेशन"
+    },
+    {
+      id: "s2",
+      treatmentEn: "Knee Replacement (Total Knee Arthroplasty)",
+      treatmentHi: "नी रिप्लेसमेंट (घुटने का प्रत्यारोपण)",
+      hospital: "Sahara / Medanta Super Specialty",
+      location: "Lucknow, India",
+      cityKey: "lucknow",
+      costFormatted: "₹ 1,45,000 - ₹ 1,95,000",
+      costNum: 145000,
+      currency: "INR",
+      specialist: "Joint Replacement Specialist",
+      inclusionsEn: "US FDA approved implant, 3-4 days stay, medications, physio",
+      inclusionsHi: "यूएस एफडीए स्वीकृत इम्प्लांट, 3-4 दिन कमरा, दवाएं"
+    },
+    {
+      id: "s3",
+      treatmentEn: "Knee Replacement (Total Knee Arthroplasty)",
+      treatmentHi: "नी रिप्लेसमेंट (घुटने का प्रत्यारोपण)",
+      hospital: "Norvic International / Grande Hospital",
+      location: "Kathmandu, Nepal",
+      cityKey: "kathmandu",
+      costFormatted: "NPR 2,95,000 - NPR 3,80,000",
+      costNum: 295000,
+      currency: "NPR",
+      specialist: "Senior Ortho Specialist",
+      inclusionsEn: "Imported Joint Implant, hospital stay, post-op rehabilitation",
+      inclusionsHi: "इंपोर्टेड जॉइंट इम्प्लांट, अस्पताल में रहना, पुनर्वास"
+    },
+    {
+      id: "s4",
+      treatmentEn: "Cataract Surgery (Phacoemulsification)",
+      treatmentHi: "मोतियाबिंद सर्जरी (फेको तकनीक)",
+      hospital: "Centre for Sight / Eye Institute",
+      location: "Delhi, India",
+      cityKey: "delhi",
+      costFormatted: "₹ 25,000 - ₹ 45,000 / eye",
+      costNum: 25000,
+      currency: "INR",
+      specialist: "Ophthalmologist & Retinal Surgeon",
+      inclusionsEn: "Foldable Monofocal / Multifocal IOL Lens, daycare procedure, post-op drops",
+      inclusionsHi: "फोल्डेबल लेंस, डेकेयर प्रक्रिया, आई ड्रॉप्स"
+    },
+    {
+      id: "s5",
+      treatmentEn: "Cataract Surgery (Phacoemulsification)",
+      treatmentHi: "मोतियाबिंद सर्जरी (फेको तकनीक)",
+      hospital: "Mansarovar Eye Hospital",
+      location: "Lucknow, India",
+      cityKey: "lucknow",
+      costFormatted: "₹ 18,000 - ₹ 35,000 / eye",
+      costNum: 18000,
+      currency: "INR",
+      specialist: "Senior Eye Surgeon",
+      inclusionsEn: "Phaco technique, hydrophobic IOL lens, follow-up checkups",
+      inclusionsHi: "फेको तकनीक, हाइड्रोफोबिक लेंस, फॉलो-अप जांच"
+    },
+    {
+      id: "s6",
+      treatmentEn: "Heart Bypass Surgery (CABG)",
+      treatmentHi: "हार्ट बायपास सर्जरी (CABG)",
+      hospital: "Fortis Escorts Heart Institute",
+      location: "Delhi, India",
+      cityKey: "delhi",
+      costFormatted: "₹ 2,90,000 - ₹ 3,80,000",
+      costNum: 29000,
+      currency: "INR",
+      specialist: "Senior Cardiac Surgeon",
+      inclusionsEn: "Off-pump CABG, 3 days Cardiac ICU, 4 days room, heart rehab plan",
+      inclusionsHi: "कार्डियक आईसीयू स्टे, बायपास सर्जरी, हृदय रिहैब प्लान"
+    },
+    {
+      id: "s7",
+      treatmentEn: "Kidney Stone Treatment (PCNL / RIRS Laser)",
+      treatmentHi: "किडनी स्टोन (पथरी) लेजर इलाज",
+      hospital: "Sanjay Gandhi Urology Center",
+      location: "Lucknow, India",
+      cityKey: "lucknow",
+      costFormatted: "₹ 35,000 - ₹ 65,000",
+      costNum: 35000,
+      currency: "INR",
+      specialist: "Senior Urologist",
+      inclusionsEn: "Holmium Laser stone lithotripsy, DJ stent placement, 1-day stay",
+      inclusionsHi: "होलमियम लेजर पथरी तोड़ना, डीजे स्टेंट, 1 दिन स्टे"
+    },
+    {
+      id: "s8",
+      treatmentEn: "Cancer Treatment (Chemotherapy / Onco-Surgery)",
+      treatmentHi: "कैंसर इलाज (कीमोथेरेपी / ऑन्को-सर्जरी)",
+      hospital: "Rajiv Gandhi Cancer Institute",
+      location: "Delhi, India",
+      cityKey: "delhi",
+      costFormatted: "₹ 65,000 - ₹ 1,20,000 / cycle",
+      costNum: 65000,
+      currency: "INR",
+      specialist: "Medical & Surgical Oncologist",
+      inclusionsEn: "Targeted chemo drug infusion, daycare bed, anti-emetic medications",
+      inclusionsHi: "कीमोथेरेपी ड्रिप, डेकेयर बेड, सपोर्टिव दवाएं"
+    },
+    {
+      id: "s9",
+      treatmentEn: "IVF Treatment (In Vitro Fertilization)",
+      treatmentHi: "आईवीएफ निसंतानता इलाज (IVF)",
+      hospital: "Nepal IVF & Fertility Center",
+      location: "Kathmandu, Nepal",
+      cityKey: "kathmandu",
+      costFormatted: "NPR 1,80,000 - NPR 2,60,000",
+      costNum: 180000,
+      currency: "NPR",
+      specialist: "Senior Reproductive Endocrinologist",
+      inclusionsEn: "Egg retrieval, ICSI, embryo culture, embryo transfer & hormonal support",
+      inclusionsHi: "एग रिट्रीवल, आईसीएसआई, भ्रूण संवर्धन व ट्रांसफ़र"
+    },
+    {
+      id: "s10",
+      treatmentEn: "Spine Surgery (Laminectomy / Discectomy)",
+      treatmentHi: "रीढ़ की हड्डी (स्पाइन) की सर्जरी",
+      hospital: "Artemis Hospital / Spine Care",
+      location: "Delhi, India",
+      cityKey: "delhi",
+      costFormatted: "₹ 2,10,000 - ₹ 3,10,000",
+      costNum: 210000,
+      currency: "INR",
+      specialist: "Neuro & Spine Surgeon",
+      inclusionsEn: "Microscopic nerve decompression, spinal stabilization, 3-4 days stay",
+      inclusionsHi: "माइक्रोस्कोपिक नर्व डिकम्प्रेशन, स्पाइनल स्टेबलाइजेशन"
+    },
+    {
+      id: "s11",
+      treatmentEn: "Dental Implant (Single Tooth / Full Mouth)",
+      treatmentHi: "डेंटल इम्प्लांट (दांत प्रत्यारोपण)",
+      hospital: "Charak Dental Center",
+      location: "Lucknow, India",
+      cityKey: "lucknow",
+      costFormatted: "₹ 15,000 - ₹ 28,000 / implant",
+      costNum: 15000,
+      currency: "INR",
+      specialist: "Prosthodontist & Implantologist",
+      inclusionsEn: "Titanium implant screw, ceramic crown, digital 3D scan & warranty",
+      inclusionsHi: "टाइटेनियम स्क्रू, सिरामिक क्राउन, 3D स्कैन व वारंटी"
+    },
+    {
+      id: "s12",
+      treatmentEn: "Gallbladder Surgery (Laparoscopic Cholecystectomy)",
+      treatmentHi: "पित्त की थैली की सर्जरी (लेप्रोस्कोपिक)",
+      hospital: "Vayodha Hospital",
+      location: "Kathmandu, Nepal",
+      cityKey: "kathmandu",
+      costFormatted: "NPR 55,000 - NPR 85,000",
+      costNum: 55000,
+      currency: "NPR",
+      specialist: "Laparoscopic Surgeon",
+      inclusionsEn: "Keyhole laparoscopic stone removal, 1-2 days hospital room, meds",
+      inclusionsHi: "दूरबीन (लेप्रोस्कोपिक) द्वारा सर्जरी, 1-2 दिन रूम"
+    }
+  ],
+
+  // Legacy cost database for quick services
   costDatabase: [
     { id: "c1", nameEn: "Foley Catheter Insertion & Removal", nameHi: "फॉले कैथेटर (पेशाब की नली)", category: "Nurse @ Home", cost: "₹499 - ₹799", inclusionsEn: "Sterile insertion/removal, bag setup, catheter care", inclusionsHi: "स्टेराइल कैथेटर डालना/निकालना, बैग सेटअप" },
     { id: "c2", nameEn: "Ryles Tube Insertion & Removal", nameHi: "राइस ट्यूब (भोजन नली)", category: "Nurse @ Home", cost: "₹599 - ₹899", inclusionsEn: "Feeding tube placement, verification & patient guidance", inclusionsHi: "राइस ट्यूब डालना, जांच व गाइडेंस" },
@@ -176,11 +395,7 @@ const UPACHAR_DATA = {
     { id: "c11", nameEn: "Oxygen Concentrator (5L / 10L) Rental", nameHi: "ऑक्सीजन कंसंट्रेटर (किराया)", category: "Medical Equipment", cost: "₹3,500 - ₹5,500 / month", inclusionsEn: "Doorstep delivery, setup, humidifier bottle, backup service", inclusionsHi: "होम डिलीवरी, इंस्टॉलेशन, 24/7 बैकअप" },
     { id: "c12", nameEn: "BiPAP / CPAP Machine Rental", nameHi: "बाई-पैप / सी-पैप मशीन (किराया)", category: "Medical Equipment", cost: "₹4,500 - ₹7,000 / month", inclusionsEn: "Humidifier, mask set, pressure calibration by technician", inclusionsHi: "मास्क सेट, प्रेशर कैलिब्रेशन" },
     { id: "c13", nameEn: "Nimbus / Alpha Air Mattress Rental", nameHi: "अल्फा एंटी-बेडसोर एयर गद्दा", category: "Medical Equipment", cost: "₹1,200 - ₹2,000 / month", inclusionsEn: "Motorized air pump, bedsore prevention, sanitised unit", inclusionsHi: "मोटराइज्ड पंप, बेडसोर रोकथाम" },
-    { id: "c14", nameEn: "Home Sample Collection (Blood/Urine)", nameHi: "घर पर सैंपल कलेक्शन (फ्री होम डिलीवरी)", category: "Diagnostics @ Home", cost: "FREE Pickup + Test Fee", inclusionsEn: "Sterile single-use needle, certified phlebotomist, WhatsApp report", inclusionsHi: "फ्री सैंपलPickup, WhatsApp रिपोर्ट" },
-    { id: "c15", nameEn: "Master Health Checkup Silver", nameHi: "मास्टर हेल्थ चेक-अप सिल्वर", category: "Diagnostics @ Home", cost: "₹1,499", inclusionsEn: "45+ Tests including CBC, Sugar, Lipid, KFT, LFT", inclusionsHi: "45+ टेस्ट: सीबीसी, शुगर, लिपिड, केएफटी, एलएफटी" },
-    { id: "c16", nameEn: "Master Health Checkup Gold", nameHi: "मास्टर हेल्थ चेक-अप गोल्ड", category: "Diagnostics @ Home", cost: "₹2,499", inclusionsEn: "68+ Tests including Thyroid, HbA1c, Vitamin D3/B12", inclusionsHi: "68+ टेस्ट: थायराइड, एचबीए1सी, विटामिन" },
-    { id: "c17", nameEn: "Home Digital ECG Test", nameHi: "घर पर डिजिटल ईसीजी (ECG)", category: "Diagnostics @ Home", cost: "₹599 - ₹899", inclusionsEn: "Portable ECG technician visit, cardiologist verified report", inclusionsHi: "पोर्टेबल ईसीजी मशीन, कार्डियोलॉजिस्ट रिपोर्ट" },
-    { id: "c18", nameEn: "Physiotherapy Session @ Home", nameHi: "फिजियोथेरेपी सेशन (घर पर)", category: "Physiotherapy @ Home", cost: "₹600 - ₹900 / session", inclusionsEn: "45-min personalized rehab, exercise therapy, electrotherapy", inclusionsHi: "45 मिनट थेरेपी सेशन, एक्सरसाइज व मशीन उपचार" }
+    { id: "c14", nameEn: "Home Sample Collection (Blood/Urine)", nameHi: "घर पर सैंपल कलेक्शन (फ्री होम डिलीवरी)", category: "Diagnostics @ Home", cost: "FREE Pickup + Test Fee", inclusionsEn: "Sterile single-use needle, certified phlebotomist, WhatsApp report", inclusionsHi: "फ्री सैंपलPickup, WhatsApp रिपोर्ट" }
   ],
 
   sampleCollectionTests: [
@@ -295,22 +510,22 @@ const UPACHAR_DATA = {
 
   faqs: [
     {
-      qEn: "How quickly can a nurse, doctor, or sample collector visit my home?",
-      qHi: "नर्स, डॉक्टर या लैब तकनीशियन कितनी देर में घर पहुँचते हैं?",
-      aEn: "For routine appointments, visits are scheduled within 2 to 4 hours. For home sample collection, morning slots (6 AM - 11 AM) are available. Emergency nursing/equipment dispatch is immediate.",
-      aHi: "सामान्य अपॉइंटमेंट 2 से 4 घंटे में शेड्यूल होते हैं। होम सैंपल कलेक्शन के लिए सुबह 6 से 11 बजे का स्लॉट भी उपलब्ध है।"
+      qEn: "How does the Surgery & Treatment Cost Comparison work?",
+      qHi: "सर्जरी और इलाज की लागत तुलना कैसे काम करती है?",
+      aEn: "Our platform aggregates estimated surgical and treatment costs from accredited hospitals across Delhi, Lucknow, and Kathmandu. You can filter by treatment type and location to compare hospital charges, doctor fees, and room costs.",
+      aHi: "हमारा प्लेटफॉर्म दिल्ली, लखनऊ और काठमांडू के अस्पतालों से अनुमानित सर्जरी और इलाज की लागत प्रदर्शित करता है। आप शहर और इलाज के अनुसार फ़िल्टर करके तुलना कर सकते हैं।"
     },
     {
-      qEn: "Which phone numbers should I call for India and Nepal?",
-      qHi: "भारत और नेपाल के लिए किन फोन नंबरों पर कॉल करें?",
-      aEn: "For Nepal: Call / WhatsApp +977-9848094547. For India: Call / WhatsApp +91-7459977911. You can also email us at upachar.org@gmail.com.",
-      aHi: "नेपाल के लिए: +977-9848094547 पर कॉल/व्हाट्सएप करें। भारत के लिए: +91-7459977911 पर संपर्क करें। ईमेल: upachar.org@gmail.com।"
+      qEn: "How do I request a personalized treatment quote with medical reports?",
+      qHi: "मैं अपनी मेडिकल रिपोर्ट के साथ व्यक्तिगत कोटेशन कैसे मांग सकता हूँ?",
+      aEn: "Simply fill out our 'Request a Quote' form on the website, select your treatment and preferred city/hospital, and attach your medical reports. Our medical team will coordinate with senior specialists to send you an estimated treatment plan.",
+      aHi: "वेबसाइट पर 'Request a Quote' फॉर्म भरें, अपना इलाज और पसंदीदा अस्पताल चुनें और मेडिकल रिपोर्ट सबमिट करें। हमारी मेडिकल टीम आपको अनुमानित रिपोर्ट भेजेगी।"
     },
     {
-      qEn: "How does the Cost Comparison & Pricing work?",
-      qHi: "कीमत तुलना (Cost Comparison) कैसे काम करती है?",
-      aEn: "You can use our interactive Cost Comparison search tool to view transparent estimates for procedures, nursing shifts, equipment rentals, and health packages side by side.",
-      aHi: "आप हमारी वेबसाइट पर 'Cost Comparison' सर्च टूल से सभी नर्सिंग, डॉक्टर विजिट, उपकरण किराये और लैब जांचों की पारदर्शी दरों की तुलना कर सकते हैं।"
+      qEn: "Which contact numbers are available for India and Nepal?",
+      qHi: "भारत और नेपाल के लिए कौन से नंबर उपलब्ध हैं?",
+      aEn: "For Nepal: Call / WhatsApp +977-9848094547. For India: Call / WhatsApp +91-7459977911. Email: upachar.org@gmail.com.",
+      aHi: "नेपाल: +977-9848094547, भारत: +91-7459977911. ईमेल: upachar.org@gmail.com।"
     }
   ]
 };

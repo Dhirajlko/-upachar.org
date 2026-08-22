@@ -1,6 +1,6 @@
 /**
  * Upachar.org Main Application Logic
- * Interactive Search & Cost Comparison, Online Appointments, Home Sample Collection & WhatsApp Dispatcher
+ * Treatment & Surgery Cost Comparison, Online Appointments, Home Sample Collection & WhatsApp Dispatcher
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function initApp() {
     setupLanguageSwitcher();
     setupMobileMenu();
+    renderSurgeryCostSection();
     renderServices(activeTab);
-    renderCostComparisonTable();
     renderSampleCollectionSection();
     renderFaqs();
     setupModal();
@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.classList.add('active');
 
         applyTranslations();
+        renderSurgeryCostSection();
         renderServices(activeTab);
-        renderCostComparisonTable();
         renderSampleCollectionSection();
         renderFaqs();
         updateFormSelects();
@@ -80,23 +80,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // SEARCH & COST COMPARISON TABLE TOOL
-  function renderCostComparisonTable() {
-    const tableBody = document.getElementById('costTableBody');
-    const searchInput = document.getElementById('costSearchInput');
-    const categorySelect = document.getElementById('costCategoryFilter');
+  // SURGERY & TREATMENT COST COMPARISON SECTION LOGIC
+  function renderSurgeryCostSection() {
+    const tableBody = document.getElementById('surgeryTableBody');
+    const selectTreatment = document.getElementById('surgeryTreatmentSelect');
+    const selectCity = document.getElementById('surgeryCitySelect');
+    const searchBtn = document.getElementById('surgerySearchBtn');
 
     if (!tableBody) return;
 
-    function filterAndRender() {
-      const query = (searchInput ? searchInput.value : '').toLowerCase();
-      const cat = categorySelect ? categorySelect.value : 'all';
+    // Populate Treatment Dropdown dynamically if empty
+    if (selectTreatment && selectTreatment.options.length <= 1) {
+      const uniqueTreatments = [...new Set(UPACHAR_DATA.surgeryDatabase.map(s => s.treatmentEn))];
+      uniqueTreatments.forEach(t => {
+        const opt = document.createElement('option');
+        opt.value = t;
+        opt.textContent = t;
+        selectTreatment.appendChild(opt);
+      });
+    }
 
-      const filtered = UPACHAR_DATA.costDatabase.filter(item => {
-        const name = (currentLang === 'hi' ? item.nameHi : item.nameEn).toLowerCase();
-        const matchesQuery = name.includes(query) || item.category.toLowerCase().includes(query);
-        const matchesCat = cat === 'all' || item.category.toLowerCase().includes(cat.toLowerCase());
-        return matchesQuery && matchesCat;
+    function filterAndRenderSurgeries() {
+      const selectedT = selectTreatment ? selectTreatment.value : 'all';
+      const selectedC = selectCity ? selectCity.value : 'all';
+
+      const filtered = UPACHAR_DATA.surgeryDatabase.filter(item => {
+        const matchesT = selectedT === 'all' || item.treatmentEn.toLowerCase().includes(selectedT.toLowerCase());
+        const matchesC = selectedC === 'all' || item.cityKey.toLowerCase() === selectedC.toLowerCase();
+        return matchesT && matchesC;
       });
 
       tableBody.innerHTML = '';
@@ -104,9 +115,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (filtered.length === 0) {
         tableBody.innerHTML = `
           <tr>
-            <td colspan="5" style="text-align:center; padding:2rem; color:var(--text-muted);">
-              <i class="fas fa-search" style="font-size:2rem; margin-bottom:0.5rem; display:block;"></i>
-              No healthcare services or tests matched your search "${query}". Try searching "Catheter", "Oxygen", "Doctor", "CBC"...
+            <td colspan="5" style="text-align:center; padding:2.5rem; color:var(--text-muted);">
+              <i class="fas fa-search" style="font-size:2.5rem; margin-bottom:0.75rem; display:block; color:var(--accent);"></i>
+              No treatment or surgery matched your selection. Try selecting "All Treatments" or "All Cities".
             </td>
           </tr>
         `;
@@ -115,18 +126,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
       filtered.forEach(item => {
         const isHi = currentLang === 'hi';
-        const name = isHi ? item.nameHi : item.nameEn;
+        const treatmentName = isHi ? item.treatmentHi : item.treatmentEn;
         const inclusions = isHi ? item.inclusionsHi : item.inclusionsEn;
 
         const row = document.createElement('tr');
         row.innerHTML = `
-          <td><strong>${name}</strong></td>
-          <td><span class="service-badge" style="font-size:0.75rem;">${item.category}</span></td>
-          <td><span style="font-weight:800; color:var(--accent); font-size:1.05rem;">${item.cost}</span></td>
-          <td style="font-size:0.875rem; color:var(--text-muted);">${inclusions}</td>
           <td>
-            <button class="btn btn-primary btn-sm book-cost-item" data-name="${name}">
-              <i class="fab fa-whatsapp"></i> ${isHi ? 'बुकिंग करें' : 'Book'}
+            <strong style="color:var(--primary); font-size:1.05rem;">${treatmentName}</strong>
+            <div style="font-size:0.775rem; color:var(--text-muted);"><i class="fas fa-user-md" style="color:var(--accent);"></i> ${item.specialist}</div>
+          </td>
+          <td><strong>${item.hospital}</strong></td>
+          <td>
+            <span class="service-badge" style="background:rgba(14,165,233,0.12); color:var(--cyan);">
+              <i class="fas fa-map-marker-alt"></i> ${item.location}
+            </span>
+          </td>
+          <td>
+            <span style="font-weight:800; color:var(--accent); font-size:1.15rem;">${item.costFormatted}</span>
+            <div style="font-size:0.725rem; color:var(--text-light);">Indicative Package</div>
+          </td>
+          <td>
+            <button class="btn btn-navy btn-sm quote-btn" data-treatment="${treatmentName}" data-hospital="${item.hospital}" data-city="${item.location}">
+              <i class="fab fa-whatsapp"></i> ${isHi ? 'विवरण / कोटेशन लें' : 'Request Estimate'}
             </button>
           </td>
         `;
@@ -134,17 +155,37 @@ document.addEventListener('DOMContentLoaded', () => {
         tableBody.appendChild(row);
       });
 
-      document.querySelectorAll('.book-cost-item').forEach(btn => {
+      // Attach click events
+      document.querySelectorAll('.quote-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-          openBookingModal('', `Inquiry & Booking for: ${btn.dataset.name}`);
+          const tName = btn.dataset.treatment;
+          const hName = btn.dataset.hospital;
+          const cName = btn.dataset.city;
+
+          openQuoteModal(tName, hName, cName);
         });
       });
     }
 
-    if (searchInput) searchInput.oninput = filterAndRender;
-    if (categorySelect) categorySelect.onchange = filterAndRender;
+    if (searchBtn) searchBtn.onclick = filterAndRenderSurgeries;
+    if (selectTreatment) selectTreatment.onchange = filterAndRenderSurgeries;
+    if (selectCity) selectCity.onchange = filterAndRenderSurgeries;
 
-    filterAndRender();
+    filterAndRenderSurgeries();
+  }
+
+  // Open Quote Request Modal / Scroll to Form
+  function openQuoteModal(treatment = '', hospital = '', city = '') {
+    const reqTreatment = document.getElementById('quoteTreatment');
+    const prefHospital = document.getElementById('quoteHospital');
+
+    if (reqTreatment && treatment) reqTreatment.value = treatment;
+    if (prefHospital && hospital) prefHospital.value = `${hospital} (${city})`;
+
+    const quoteSection = document.getElementById('requestQuote');
+    if (quoteSection) {
+      quoteSection.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
   // HOME SAMPLE COLLECTION SECTION
@@ -307,7 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!select) return;
 
     const isHi = currentLang === 'hi';
-    select.innerHTML = `<option value="">${isHi ? '-- आवश्यक सेवा चुनें --' : '-- Select Healthcare Service / Test --'}</option>`;
+    select.innerHTML = `<option value="">${isHi ? '-- आवश्यक सेवा / सर्जरी चुनें --' : '-- Select Healthcare Service / Surgery --'}</option>`;
 
     UPACHAR_DATA.services.forEach(s => {
       const option = document.createElement('option');
@@ -329,6 +370,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Form Handlers & WhatsApp Link Generator
   function setupForms() {
+    // 1. Personalized Quote Form Handler
+    const quoteForm = document.getElementById('personalizedQuoteForm');
+    if (quoteForm) {
+      quoteForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('quoteName').value;
+        const age = document.getElementById('quoteAge').value;
+        const country = document.getElementById('quoteCountry').value;
+        const treatment = document.getElementById('quoteTreatment').value;
+        const hospital = document.getElementById('quoteHospital').value;
+        const contact = document.getElementById('quoteContact').value;
+        const emailWA = document.getElementById('quoteEmailWA').value;
+        const date = document.getElementById('quoteDate').value;
+        const reportInput = document.getElementById('quoteReportFile');
+
+        let reportStatus = "No file attached";
+        if (reportInput && reportInput.files.length > 0) {
+          reportStatus = `Attached: ${reportInput.files[0].name} (${(reportInput.files[0].size / 1024).toFixed(1)} KB)`;
+        }
+
+        let text = `🏥 *PERSONALIZED TREATMENT & SURGERY ESTIMATE REQUEST*\n\n`;
+        text += `👤 *Patient Name:* ${name} (Age: ${age})\n`;
+        text += `📍 *Country/City:* ${country}\n`;
+        text += `⚕️ *Treatment/Surgery Required:* ${treatment}\n`;
+        text += `🏥 *Preferred Hospital/City:* ${hospital || 'Any suitable hospital'}\n`;
+        text += `📞 *Contact Number:* ${contact}\n`;
+        text += `💬 *Email / WhatsApp:* ${emailWA}\n`;
+        text += `📅 *Preferred Date:* ${date || 'As soon as possible'}\n`;
+        text += `📎 *Medical Reports:* ${reportStatus}\n\n`;
+        text += `Please send me an estimated treatment cost breakdown and specialist recommendations. Thank you!`;
+
+        const waNumber = country.toLowerCase().includes('nepal') 
+          ? UPACHAR_DATA.contact.whatsappNepal 
+          : UPACHAR_DATA.contact.whatsappIndia;
+
+        window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`, '_blank');
+      });
+    }
+
+    // 2. Online Appointment Form Handler
     const appointmentForm = document.getElementById('onlineAppointmentForm');
     if (appointmentForm) {
       appointmentForm.addEventListener('submit', (e) => {
@@ -346,6 +427,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    // 3. Modal Booking Form Handler
     const modalForm = document.getElementById('modalBookingForm');
     if (modalForm) {
       modalForm.addEventListener('submit', (e) => {
@@ -371,7 +453,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ? UPACHAR_DATA.contact.whatsappNepal 
       : UPACHAR_DATA.contact.whatsappIndia;
 
-    let text = `🏥 *NEW ONLINE APPOINTMENT - UPACHAR.ORG*\n\n`;
+    let text = `🏥 *NEW ONLINE BOOKING - UPACHAR.ORG*\n\n`;
     text += `🔹 *Requested Service:* ${service || 'General Healthcare Visit'}\n`;
     text += `👤 *Patient Name:* ${name || 'N/A'}\n`;
     text += `📞 *Phone:* ${phone || 'N/A'}\n`;
