@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UPACHAR — Healthcare Made Simple | Doctors, Hospitals, Treatments & Home Care</title>
-  <meta name="description" content="UPACHAR — Healthcare Made Simple. Search top doctors, compare accredited hospitals, surgery costs, medical packages, online consultations & doorstep home healthcare in India & Nepal.">
-  <meta name="keywords" content="Find Doctors, Compare Hospitals, Treatment Cost, Surgery Packages, Online Consultation, Home Nursing, Upachar Healthcare, Medical Tourism India Nepal">
+  <meta name="description" content="UPACHAR — Healthcare Made Simple. Search top doctors, compare accredited hospitals in India & Nepal, surgery costs, medical packages, online consultations & doorstep home healthcare.">
+  <meta name="keywords" content="Find Doctors Nepal India, Compare Hospitals, Surgery Costs, Air Ambulance, Home Nursing, Home ICU Setup, Upachar Healthcare">
 
   <link rel="icon" href="assets/images/logo.jpeg" type="image/jpeg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -13,7 +13,7 @@
 </head>
 <body>
 
-  <!-- Top Utility Bar -->
+  <!-- Top Utility Bar (Matching Wireframe Header: Logo, Phone India, Phone Nepal, Email, Lang) -->
   <div class="top-bar">
     <div class="container">
       <div class="top-info">
@@ -30,7 +30,7 @@
     </div>
   </div>
 
-  <!-- Header & Exact 9-Item Navigation Bar -->
+  <!-- Header & Exact 9-Item Navigation Bar (Matching Wireframe Sketch 100%) -->
   <header class="main-header">
     <div class="container header-container">
       <a href="index.html" class="brand-logo">
@@ -41,7 +41,7 @@
         </div>
       </a>
 
-      <!-- 9-ITEM MAIN NAVIGATION MENU WITH DROPDOWNS -->
+      <!-- 9-ITEM MAIN NAVIGATION MENU WITH WIREFRAME DROPDOWNS -->
       <nav class="nav-menu">
         <!-- 1. HOME -->
         <div class="nav-item">
@@ -53,79 +53,115 @@
           <a href="#about" class="nav-link" data-i18n="navAboutUs">ABOUT US</a>
         </div>
 
-        <!-- 3. SERVICES (Dropdown) -->
+        <!-- 3. SERVICES (Dropdown: Find Doc/Hosp, Compare Cost, Online Appoint, Home Services, Treatmt Abroad, Second Opin, Online Consult, Medical Tourism, Air Ambulance) -->
         <div class="nav-item">
           <a href="#services" class="nav-link" data-i18n="navServices">SERVICES <i class="fas fa-chevron-down" style="font-size:0.65rem;"></i></a>
           <div class="dropdown-menu">
-            <div class="dropdown-header">Find Healthcare</div>
-            <a href="#doctors" class="dropdown-item"><span>Doctors & Specialists</span> <i class="fas fa-user-md"></i></a>
-            <a href="#hospitals" class="dropdown-item"><span>Hospitals & Clinics</span> <i class="fas fa-hospital"></i></a>
-            
-            <div class="dropdown-header">Compare & Choose</div>
-            <a href="#surgeryCosts" class="dropdown-item"><span>Treatment & Surgery Cost</span> <i class="fas fa-tags"></i></a>
-            <a href="#surgeryCosts" class="dropdown-item"><span>Medical Packages</span> <i class="fas fa-box-open"></i></a>
-
-            <div class="dropdown-header">Book & Consult</div>
-            <a href="#online" class="dropdown-item"><span>Appointments & Tele-Consult</span> <i class="fas fa-laptop-medical"></i></a>
-            <a href="#requestQuote" class="dropdown-item"><span>Second Medical Opinion</span> <i class="fas fa-notes-medical"></i></a>
-
-            <div class="dropdown-header">Healthcare at Home</div>
-            <a href="#homeService" class="dropdown-item"><span>Nursing, Diagnostics, Physio</span> <i class="fas fa-home"></i></a>
-
-            <div class="dropdown-header">Healthcare Abroad & Complete Care</div>
-            <a href="#abroad" class="dropdown-item"><span>Medical Tourism (India/Nepal)</span> <i class="fas fa-plane-departure"></i></a>
+            <a href="#doctors" class="dropdown-item"><span>Find Doc/Hosp</span> <i class="fas fa-search"></i></a>
+            <a href="#surgeryCosts" class="dropdown-item"><span>Compare Cost</span> <i class="fas fa-calculator"></i></a>
+            <a href="#online" class="dropdown-item"><span>Online Appoint</span> <i class="fas fa-calendar-check"></i></a>
+            <a href="#homeService" class="dropdown-item"><span>Home Services</span> <i class="fas fa-home"></i></a>
+            <a href="#abroad" class="dropdown-item"><span>Treatmt Abroad</span> <i class="fas fa-plane"></i></a>
+            <a href="#requestQuote" class="dropdown-item"><span>Second Opin</span> <i class="fas fa-notes-medical"></i></a>
+            <a href="#online" class="dropdown-item"><span>Online Consult</span> <i class="fas fa-laptop-medical"></i></a>
+            <a href="#abroad" class="dropdown-item"><span>Medical Tourism</span> <i class="fas fa-globe"></i></a>
+            <a href="#contact" class="dropdown-item"><span>Air Ambulance</span> <i class="fas fa-helicopter"></i></a>
           </div>
         </div>
 
-        <!-- 4. TREATMENT (Dropdown matching MUFA screenshot) -->
+        <!-- 4. TREATMENT (Submenu: Cancer, Cardiac, Brain, Bone/Joint, Kidney, Liver, etc.) -->
         <div class="nav-item">
-          <a href="#treatments" class="nav-link" data-i18n="navTreatment">TREATMENT <i class="fas fa-chevron-down" style="font-size:0.65rem;"></i></a>
+          <a href="#surgeryCosts" class="nav-link" data-i18n="navTreatment">TREATMENT <i class="fas fa-chevron-down" style="font-size:0.65rem;"></i></a>
           <div class="dropdown-menu">
-            <a href="#surgeryCosts" class="dropdown-item"><span>Cancer Treatment & Oncology</span> <i class="fas fa-ribbon"></i></a>
-            <a href="#surgeryCosts" class="dropdown-item"><span>Heart Care & Surgery (CABG)</span> <i class="fas fa-heartbeat"></i></a>
-            <a href="#surgeryCosts" class="dropdown-item"><span>Bone, Joint & Spine Care (Knee/Hip)</span> <i class="fas fa-bone"></i></a>
-            <a href="#surgeryCosts" class="dropdown-item"><span>Brain & Spine Treatment</span> <i class="fas fa-brain"></i></a>
-            <a href="#surgeryCosts" class="dropdown-item"><span>Liver & Digestive Treatment</span> <i class="fas fa-procedures"></i></a>
-            <a href="#surgeryCosts" class="dropdown-item"><span>Kidney Treatment & Laser Lithotripsy</span> <i class="fas fa-x-ray"></i></a>
-            <a href="#surgeryCosts" class="dropdown-item"><span>Organ Transplant (Liver/Kidney)</span> <i class="fas fa-hand-holding-medical"></i></a>
-            <a href="#surgeryCosts" class="dropdown-item"><span>Urology & Prostate Care</span> <i class="fas fa-user-nurse"></i></a>
-            <a href="#surgeryCosts" class="dropdown-item"><span>Advanced Robotic Surgery</span> <i class="fas fa-robot"></i></a>
-            <a href="#surgeryCosts" class="dropdown-item"><span>IVF & Fertility Treatment</span> <i class="fas fa-baby"></i></a>
+            <a href="#surgeryCosts" class="dropdown-item"><span>Cancer Treatment</span> <i class="fas fa-ribbon"></i></a>
+            <a href="#surgeryCosts" class="dropdown-item"><span>Cardiac (Heart Care)</span> <i class="fas fa-heartbeat"></i></a>
+            <a href="#surgeryCosts" class="dropdown-item"><span>Brain & Spine Care</span> <i class="fas fa-brain"></i></a>
+            <a href="#surgeryCosts" class="dropdown-item"><span>Bone & Joint Replacement</span> <i class="fas fa-bone"></i></a>
+            <a href="#surgeryCosts" class="dropdown-item"><span>Kidney & Urology Care</span> <i class="fas fa-procedures"></i></a>
+            <a href="#surgeryCosts" class="dropdown-item"><span>Liver & Digestive Care</span> <i class="fas fa-stethoscope"></i></a>
           </div>
         </div>
 
-        <!-- 5. HOSPITALS (Dropdown matching MUFA screenshot) -->
+        <!-- 5. HOSPITALS (Submenu matching sketch: Nepal -> & India ->) -->
         <div class="nav-item">
           <a href="#hospitals" class="nav-link" data-i18n="navHospitals">HOSPITALS <i class="fas fa-chevron-down" style="font-size:0.65rem;"></i></a>
           <div class="dropdown-menu">
-            <a href="#hospitals" class="dropdown-item"><span>Indraprastha Apollo Hospitals, New Delhi</span></a>
-            <a href="#hospitals" class="dropdown-item"><span>Fortis Memorial Research Institute (FMRI), Gurugram</span></a>
-            <a href="#hospitals" class="dropdown-item"><span>Medanta - The Medicity, Gurugram</span></a>
-            <a href="#hospitals" class="dropdown-item"><span>Max Super Speciality Hospital, Saket, New Delhi</span></a>
-            <a href="#hospitals" class="dropdown-item"><span>Manipal Hospitals, Dwarka, New Delhi</span></a>
-            <a href="#hospitals" class="dropdown-item"><span>BLK-Max Super Speciality Hospital, New Delhi</span></a>
-            <a href="#hospitals" class="dropdown-item"><span>Fortis Escorts Heart Institute, New Delhi</span></a>
+            <!-- Nepal -> Submenu -->
+            <div class="dropdown-item has-submenu">
+              <span>🇳🇵 Nepal Hospitals</span> <i class="fas fa-chevron-right" style="font-size:0.65rem;"></i>
+              <div class="flyout-submenu">
+                <a href="#hospitals" class="dropdown-item"><span>Norvic International Hospital</span></a>
+                <a href="#hospitals" class="dropdown-item"><span>Grande International Hospital</span></a>
+                <a href="#hospitals" class="dropdown-item"><span>Vayodha Hospital</span></a>
+                <a href="#hospitals" class="dropdown-item"><span>Nepal Mediciti Hospital</span></a>
+              </div>
+            </div>
+
+            <!-- India -> Submenu -->
+            <div class="dropdown-item has-submenu">
+              <span>🇮🇳 India Hospitals</span> <i class="fas fa-chevron-right" style="font-size:0.65rem;"></i>
+              <div class="flyout-submenu">
+                <a href="#hospitals" class="dropdown-item"><span>Indraprastha Apollo, New Delhi</span></a>
+                <a href="#hospitals" class="dropdown-item"><span>Fortis FMRI, Gurugram</span></a>
+                <a href="#hospitals" class="dropdown-item"><span>Medanta - The Medicity, Gurugram</span></a>
+                <a href="#hospitals" class="dropdown-item"><span>Max Super Speciality, Saket</span></a>
+                <a href="#hospitals" class="dropdown-item"><span>Manipal Hospitals, Dwarka</span></a>
+                <a href="#hospitals" class="dropdown-item"><span>BLK-Max Super Speciality</span></a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- 6. DOCTORS -->
+        <!-- 6. DOCTORS (Submenu matching sketch: Nepal -> & India ->) -->
         <div class="nav-item">
-          <a href="#doctors" class="nav-link" data-i18n="navDoctors">DOCTORS</a>
+          <a href="#doctors" class="nav-link" data-i18n="navDoctors">DOCTORS <i class="fas fa-chevron-down" style="font-size:0.65rem;"></i></a>
+          <div class="dropdown-menu">
+            <div class="dropdown-item has-submenu">
+              <span>🇳🇵 Nepal Doctors</span> <i class="fas fa-chevron-right" style="font-size:0.65rem;"></i>
+              <div class="flyout-submenu">
+                <a href="#doctors" class="dropdown-item"><span>Dr. Bharat Rawat (Cardiology)</span></a>
+                <a href="#doctors" class="dropdown-item"><span>Dr. Chakra Raj Pandey (Ortho)</span></a>
+                <a href="#doctors" class="dropdown-item"><span>Dr. Pankaj Jalan (Neurology)</span></a>
+              </div>
+            </div>
+            <div class="dropdown-item has-submenu">
+              <span>🇮🇳 India Doctors</span> <i class="fas fa-chevron-right" style="font-size:0.65rem;"></i>
+              <div class="flyout-submenu">
+                <a href="#doctors" class="dropdown-item"><span>Dr. (Col.) M.S. Sandhu (Cardio)</span></a>
+                <a href="#doctors" class="dropdown-item"><span>Dr. (Col.) Vijay Langer (Plastic)</span></a>
+                <a href="#doctors" class="dropdown-item"><span>Dr. Naresh Trehan (Cardiac)</span></a>
+                <a href="#doctors" class="dropdown-item"><span>Dr. Ashok Seth (Cardiology)</span></a>
+                <a href="#doctors" class="dropdown-item"><span>Dr. Subhash Gupta (Liver)</span></a>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- 7. HOME SERVICE -->
+        <!-- 7. HOME SERVICE (Submenu matching sketch: Sample, Doctor, Nurse, Rental, ICU Setup) -->
         <div class="nav-item">
-          <a href="#homeService" class="nav-link" data-i18n="navHomeService">HOME SERVICE</a>
+          <a href="#homeService" class="nav-link" data-i18n="navHomeService">HOME SERVICE <i class="fas fa-chevron-down" style="font-size:0.65rem;"></i></a>
+          <div class="dropdown-menu">
+            <a href="#sampleCollection" class="dropdown-item"><span>Sample Collection</span> <i class="fas fa-vials"></i></a>
+            <a href="#homeService" class="dropdown-item"><span>Doctor Visit @ Home</span> <i class="fas fa-user-md"></i></a>
+            <a href="#homeService" class="dropdown-item"><span>Nurse Care @ Home</span> <i class="fas fa-user-nurse"></i></a>
+            <a href="#homeService" class="dropdown-item"><span>Medical Equipment Rental</span> <i class="fas fa-wheelchair"></i></a>
+            <a href="#homeService" class="dropdown-item"><span>Home ICU Bed Setup</span> <i class="fas fa-procedures"></i></a>
+          </div>
         </div>
 
-        <!-- 8. ONLINE -->
+        <!-- 8. ONLINE (Submenu matching sketch: Appoint, Consult, Second Opinion) -->
         <div class="nav-item">
-          <a href="#online" class="nav-link" data-i18n="navOnline">ONLINE</a>
+          <a href="#online" class="nav-link" data-i18n="navOnline">ONLINE <i class="fas fa-chevron-down" style="font-size:0.65rem;"></i></a>
+          <div class="dropdown-menu">
+            <a href="#online" class="dropdown-item"><span>Online Appointment</span> <i class="fas fa-calendar-alt"></i></a>
+            <a href="#online" class="dropdown-item"><span>Online Consultation</span> <i class="fas fa-video"></i></a>
+            <a href="#requestQuote" class="dropdown-item"><span>Second Opinion</span> <i class="fas fa-notes-medical"></i></a>
+          </div>
         </div>
 
         <!-- 9. CONTACT US -->
         <div class="nav-item">
-          <a href="#contact" class="nav-link" data-i18n="navContactUs">CONTACT US</a>
+          <a href="#contact" class="nav-link" data-i18n="navContactUs">CONTACT</a>
         </div>
       </nav>
 
@@ -141,7 +177,7 @@
     </div>
   </header>
 
-  <!-- Hero Section with Universal Search Box (Inspired by Peace & MyMedTrip) -->
+  <!-- Hero Section with Universal Search Box -->
   <section id="home" class="hero-section">
     <div class="hero-overlay"></div>
     <div class="container">
@@ -156,7 +192,7 @@
         Search top doctors, compare accredited hospitals, explore surgery packages, or request healthcare at home across India & Nepal.
       </p>
 
-      <!-- UNIVERSAL SEARCH BOX (Peace Medical Tourism / VivaVel / MyMedTrip Inspired) -->
+      <!-- UNIVERSAL HERO SEARCH BOX -->
       <div class="hero-search-box">
         <select id="universalSearchCategory" class="search-select">
           <option value="all">All Categories</option>
@@ -173,7 +209,7 @@
         </button>
       </div>
 
-      <!-- Action Buttons (MyMedTrip style) -->
+      <!-- Action Buttons -->
       <div class="hero-quick-ctas">
         <a href="https://wa.me/917459977911" target="_blank" class="btn btn-whatsapp">
           <i class="fab fa-whatsapp"></i> <span data-i18n="btnFreeConsult">Chat for FREE Consultation</span>
@@ -185,7 +221,7 @@
     </div>
   </section>
 
-  <!-- DOCTORS DIRECTORY SECTION (Inspired by VivaVel screenshot) -->
+  <!-- DOCTORS DIRECTORY SECTION -->
   <section id="doctors" class="section">
     <div class="container">
       <div class="section-header">
@@ -194,7 +230,7 @@
         <p class="section-desc" data-i18n="doctorsSubheading">Consult renowned senior surgeons and medical consultants across India & Nepal.</p>
       </div>
 
-      <!-- Doctor Filters (VivaVel style: Select Country, Select Department, Search Doctor) -->
+      <!-- Doctor Filters -->
       <div class="cost-search-box">
         <select id="doctorCountryFilter" class="form-select" style="max-width:200px;">
           <option value="all" data-i18n="selectCountry">Select Country</option>
@@ -216,7 +252,7 @@
     </div>
   </section>
 
-  <!-- HOSPITALS DIRECTORY SECTION (Inspired by MUFA screenshot) -->
+  <!-- HOSPITALS DIRECTORY SECTION -->
   <section id="hospitals" class="section" style="background:var(--bg-alt);">
     <div class="container">
       <div class="section-header">
@@ -240,16 +276,16 @@
 
       <div class="cost-search-box">
         <div style="flex-grow:1; min-width:240px;">
-          <label style="font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-bottom:0.25rem; display:block;" data-i18n="selectTreatment">Select Treatment / Surgery</label>
+          <label style="font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-bottom:0.25rem; display:block;">Select Treatment / Surgery</label>
           <select id="surgeryTreatmentSelect" class="form-select">
-            <option value="all" data-i18n="allTreatments">All Treatments & Surgeries</option>
+            <option value="all">All Treatments & Surgeries</option>
           </select>
         </div>
 
         <div style="flex-grow:1; min-width:200px;">
-          <label style="font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-bottom:0.25rem; display:block;" data-i18n="selectCity">Select City / Country</label>
+          <label style="font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-bottom:0.25rem; display:block;">Select City / Country</label>
           <select id="surgeryCitySelect" class="form-select">
-            <option value="all" data-i18n="allCities">All Cities (Delhi, Lucknow, Kathmandu)</option>
+            <option value="all">All Cities (Delhi, Lucknow, Kathmandu)</option>
             <option value="delhi">Delhi, India</option>
             <option value="lucknow">Lucknow, India</option>
             <option value="kathmandu">Kathmandu, Nepal</option>
@@ -258,7 +294,7 @@
 
         <div style="align-self:flex-end;">
           <button id="surgerySearchBtn" class="btn btn-primary">
-            <i class="fas fa-search"></i> <span data-i18n="btnSearchCompare">Search & Compare</span>
+            <i class="fas fa-search"></i> <span>Search & Compare</span>
           </button>
         </div>
       </div>
@@ -267,11 +303,11 @@
         <table class="cost-table">
           <thead>
             <tr>
-              <th data-i18n="colTreatment">Treatment / Surgery</th>
-              <th data-i18n="colHospital">Hospital / Center</th>
-              <th data-i18n="colLocation">Location / City</th>
-              <th data-i18n="colCost">Estimated Cost</th>
-              <th data-i18n="colPackage">Package Details</th>
+              <th>Treatment / Surgery</th>
+              <th>Hospital / Center</th>
+              <th>Location / City</th>
+              <th>Estimated Cost</th>
+              <th>Package Details</th>
             </tr>
           </thead>
           <tbody id="surgeryTableBody"></tbody>
@@ -286,7 +322,7 @@
       <div class="section-header">
         <span class="section-tag">Doorstep Care</span>
         <h2 class="section-title">Healthcare at Home</h2>
-        <p class="section-desc">Professional nursing care, doctor visits, diagnostics, equipment, and physiotherapy at your residence.</p>
+        <p class="section-desc">Sample collection, Doctor Visit, Nurse Care, Medical Equipment Rental & Home ICU Setup.</p>
       </div>
 
       <div id="servicesContainer" class="services-grid"></div>
@@ -326,18 +362,18 @@
         <form id="personalizedQuoteForm" class="quick-form">
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
             <div class="form-group">
-              <label data-i18n="labelPatientName">Patient Name</label>
+              <label>Patient Name</label>
               <input type="text" id="quoteName" class="form-input" placeholder="e.g. Ramesh Sharma" required>
             </div>
             <div class="form-group">
-              <label data-i18n="labelAge">Patient Age</label>
+              <label>Patient Age</label>
               <input type="number" id="quoteAge" class="form-input" placeholder="e.g. 52" required>
             </div>
           </div>
 
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
             <div class="form-group">
-              <label data-i18n="labelCountryCity">Country / City</label>
+              <label>Country / City</label>
               <select id="quoteCountry" class="form-select" required>
                 <option value="India - Delhi NCR">India - Delhi NCR</option>
                 <option value="India - Lucknow / UP">India - Lucknow / UP</option>
@@ -347,41 +383,41 @@
               </select>
             </div>
             <div class="form-group">
-              <label data-i18n="labelTreatmentReq">Treatment / Surgery Required</label>
+              <label>Treatment / Surgery Required</label>
               <input type="text" id="quoteTreatment" class="form-input" placeholder="e.g. Knee Replacement / Cataract / CABG" required>
             </div>
           </div>
 
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
             <div class="form-group">
-              <label data-i18n="labelPrefHospital">Preferred Hospital / City</label>
+              <label>Preferred Hospital / City</label>
               <input type="text" id="quoteHospital" class="form-input" placeholder="e.g. Hospital A (Delhi) or Any Best Hospital">
             </div>
             <div class="form-group">
-              <label data-i18n="labelPrefDate">Preferred Date of Treatment</label>
+              <label>Preferred Date of Treatment</label>
               <input type="date" id="quoteDate" class="form-input">
             </div>
           </div>
 
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
             <div class="form-group">
-              <label data-i18n="labelContactNo">Contact Number</label>
+              <label>Contact Number</label>
               <input type="tel" id="quoteContact" class="form-input" placeholder="+91 / +977 XXXXXXXXXX" required>
             </div>
             <div class="form-group">
-              <label data-i18n="labelEmailWA">Email or WhatsApp Number</label>
+              <label>Email or WhatsApp Number</label>
               <input type="text" id="quoteEmailWA" class="form-input" placeholder="email@example.com / WhatsApp" required>
             </div>
           </div>
 
           <div class="form-group">
-            <label data-i18n="labelMedicalReports">Upload Medical Reports (Optional)</label>
+            <label>Upload Medical Reports (Optional)</label>
             <input type="file" id="quoteReportFile" class="form-input" accept=".pdf,.jpg,.png,.doc,.docx">
             <span style="font-size:0.75rem; color:var(--text-muted);">Accepted formats: PDF, Images, Word (Max 10MB)</span>
           </div>
 
           <button type="submit" class="btn btn-primary" style="width:100%; font-size:1.05rem; padding:0.9rem; margin-top:0.5rem;">
-            <i class="fab fa-whatsapp"></i> <span data-i18n="btnRequestQuote">Request My Treatment Estimate</span>
+            <i class="fab fa-whatsapp"></i> <span>Request My Treatment Estimate</span>
           </button>
         </form>
       </div>
@@ -395,7 +431,7 @@
         <span class="section-tag">About UPACHAR</span>
         <h2 class="section-title">Healthcare Made Simple</h2>
         <p class="section-desc">
-          UPACHAR connects patients across India & Nepal with accredited hospitals, top doctors, transparent surgery cost comparison, and professional doorstep healthcare.
+          UPACHAR connects patients across India & Nepal with accredited hospitals, top doctors, transparent surgery cost comparison, air ambulance support, and professional doorstep healthcare.
         </p>
       </div>
     </div>
