@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upachar.org - Home Healthcare | Cost Comparison, Online Appointment & Home Sample Collection</title>
+  <meta name="description" content="Upachar.org provides professional home healthcare: ICU Nurses at Home, Doctor Visits, Medical Equipment Rental, Cost Comparison, Online Appointments & Home Sample Collection in India & Nepal.">
+  <meta name="keywords" content="Nurse at home, Doctor home visit, Home sample collection, Medical cost comparison, Online appointment doctor, Upachar healthcare, Nepal healthcare home visit">
+
+  <link rel="icon" href="assets/images/logo.jpeg" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-info">
+        <a href="tel:+917459977911"><i class="fas fa-phone-alt"></i> <span>🇮🇳 India: +91-7459977911</span></a>
+        <a href="tel:+9779848094547"><i class="fas fa-phone-alt"></i> <span>🇳🇵 Nepal: +977-9848094547</span></a>
+        <a href="mailto:upachar.org@gmail.com"><i class="fas fa-envelope"></i> <span>upachar.org@gmail.com</span></a>
+      </div>
+      <div class="top-actions">
+        <div class="lang-switch" id="langSwitch">
+          <button class="lang-btn active" data-lang="en">English</button>
+          <button class="lang-btn" data-lang="hi">हिन्दी</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="main-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/logo.jpeg" alt="Upachar Logo">
+        <div class="brand-text">
+          <span class="brand-name">उपचार</span>
+          <span class="brand-tagline">Care At Home</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="#home" class="nav-link active" data-i18n="navHome">Home</a>
+        <a href="#services" class="nav-link" data-i18n="navServices">Our Services</a>
+        <a href="#costSearch" class="nav-link" data-i18n="navCostSearch">Cost Comparison</a>
+        <a href="#sampleCollection" class="nav-link" data-i18n="navSampleCollection">Home Sample Collection</a>
+        <a href="#appointment" class="nav-link" data-i18n="navAppointment">Online Appointment</a>
+        <a href="#contact" class="nav-link" data-i18n="navContact">Contact Us</a>
+      </nav>
+
+      <div class="nav-cta-group">
+        <button class="btn btn-primary" onclick="openBookingModal()">
+          <i class="fab fa-whatsapp"></i>
+          <span data-i18n="btnBookNow">Book Home Care</span>
+        </button>
+        <button class="mobile-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Hero Content -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-shield-alt"></i>
+            <span data-i18n="heroBadge">🏆 #1 Trusted Home Healthcare in India & Nepal</span>
+          </div>
+          <h1 class="hero-title" data-i18n="heroTitle">
+            Hospital Care Quality at the Comfort of Your Home
+          </h1>
+          <p class="hero-subtitle" data-i18n="heroSubtitle">
+            Upachar brings qualified ICU nurses, experienced doctors, doorstep lab sample collection, medical equipment, and physiotherapists directly to your home 24/7.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#appointment" class="btn btn-primary">
+              <i class="fas fa-calendar-alt"></i>
+              <span data-i18n="heroCTA">Book Online Appointment</span>
+            </a>
+            <a href="#costSearch" class="btn btn-outline" style="color:#FFF; border-color:rgba(255,255,255,0.3);">
+              <i class="fas fa-calculator"></i>
+              <span data-i18n="heroCompare">Compare Care Costs</span>
+            </a>
+          </div>
+
+          <!-- Hero Metrics -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h4 data-i18n="statPatients">15,000+</h4>
+              <p data-i18n="statPatientsLabel">Happy Patients Served</p>
+            </div>
+            <div class="stat-item">
+              <h4 data-i18n="statNurses">250+</h4>
+              <p data-i18n="statNursesLabel">Certified Nurses & Doctors</p>
+            </div>
+            <div class="stat-item">
+              <h4 data-i18n="statCities">24/7</h4>
+              <p data-i18n="statCitiesLabel">Emergency Support</p>
+            </div>
+            <div class="stat-item">
+              <h4 data-i18n="statRating">4.9 ★</h4>
+              <p data-i18n="statRatingLabel">Patient Satisfaction</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Booking Card -->
+        <div class="hero-card">
+          <div class="card-header">
+            <h3>Direct Contact & Helpline</h3>
+            <p>Reach out for immediate nursing or sample collection deployment.</p>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom:1.5rem;">
+            <a href="tel:+917459977911" class="btn btn-navy" style="justify-content:flex-start;">
+              <i class="fas fa-phone-alt"></i> <span>🇮🇳 Call India: +91-7459977911</span>
+            </a>
+            <a href="tel:+9779848094547" class="btn btn-navy" style="justify-content:flex-start; background:#2A3B82;">
+              <i class="fas fa-phone-alt"></i> <span>🇳🇵 Call Nepal: +977-9848094547</span>
+            </a>
+            <a href="https://wa.me/917459977911" target="_blank" class="btn btn-whatsapp" style="justify-content:flex-start;">
+              <i class="fab fa-whatsapp"></i> <span>WhatsApp Desk (+91 7459977911)</span>
+            </a>
+          </div>
+
+          <div style="font-size:0.85rem; color:var(--text-muted); background:var(--bg-alt); padding:0.75rem; border-radius:var(--radius-sm);">
+            <i class="fas fa-envelope" style="color:var(--accent);"></i> Email: <strong>upachar.org@gmail.com</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH OPTION OF COST COMPARISON SECTION -->
+  <section id="costSearch" class="section" style="background:var(--bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Transparent Rates</span>
+        <h2 class="section-title" data-i18n="costTitle">Search & Compare Care Costs</h2>
+        <p class="section-desc" data-i18n="costSubtitle">Transparent pricing for all home nursing, doctor visits, diagnostic tests & medical equipment rentals.</p>
+      </div>
+
+      <!-- Cost Search Box -->
+      <div class="cost-search-box">
+        <div class="search-input-wrap">
+          <i class="fas fa-search"></i>
+          <input type="text" id="costSearchInput" class="form-input" placeholder="Search services or tests (e.g. Catheter, Oxygen, ECG, CBC, Doctor Visit, Physio)...">
+        </div>
+        <select id="costCategoryFilter" class="form-select" style="max-width:240px;">
+          <option value="all">All Categories</option>
+          <option value="Nurse">Nurse @ Home</option>
+          <option value="Doctor">Doctor @ Home</option>
+          <option value="Equipment">Medical Equipment</option>
+          <option value="Diagnostics">Diagnostics & Tests</option>
+          <option value="Physiotherapy">Physiotherapy</option>
+        </select>
+      </div>
+
+      <!-- Cost Comparison Table -->
+      <div class="cost-table-wrap">
+        <table class="cost-table">
+          <thead>
+            <tr>
+              <th data-i18n="colService">Service / Test Name</th>
+              <th data-i18n="colCategory">Category</th>
+              <th data-i18n="colEstCost">Est. Cost / Package</th>
+              <th data-i18n="colInclusions">What's Included</th>
+              <th data-i18n="colAction">Book Service</th>
+            </tr>
+          </thead>
+          <tbody id="costTableBody">
+            <!-- Rendered dynamically by app.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOME SAMPLE COLLECTION SECTION -->
+  <section id="sampleCollection" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Pathology at Doorstep</span>
+        <h2 class="section-title" data-i18n="sampleTitle">Home Sample Collection</h2>
+        <p class="section-desc" data-i18n="sampleSubtitle">Certified phlebotomists collect blood & urine samples right at your doorstep. 100% sterile single-use kits.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:2rem; margin-bottom:3rem;">
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-syringe"></i></div>
+          <h3 class="why-title" data-i18n="sampleFeature1Title">100% Sterile & Safe</h3>
+          <p class="why-desc" data-i18n="sampleFeature1Desc">Single-use sealed vacutainers and needles used for every patient.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-file-medical-alt"></i></div>
+          <h3 class="why-title" data-i18n="sampleFeature2Title">Fast Digital Reports</h3>
+          <p class="why-desc" data-i18n="sampleFeature2Desc">NABL lab verified reports delivered on your WhatsApp & Email within 12-24 hours.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-clock"></i></div>
+          <h3 class="why-title" data-i18n="sampleFeature3Title">Convenient Time Slots</h3>
+          <p class="why-desc" data-i18n="sampleFeature3Desc">Choose your preferred morning or evening sample pickup time at home.</p>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.4rem; color:var(--primary); font-weight:700; margin-bottom:1.25rem; text-align:center;">Popular Home Blood & Urine Tests</h3>
+      <div id="sampleTestsGrid" class="packages-grid"></div>
+    </div>
+  </section>
+
+  <!-- ONLINE APPOINTMENT SECTION -->
+  <section id="appointment" class="section" style="background:var(--bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Quick Online Booking</span>
+        <h2 class="section-title" data-i18n="appointmentTitle">Book Online Appointment</h2>
+        <p class="section-desc" data-i18n="appointmentSubtitle">Select your preferred date, time slot, and healthcare service for doorstep delivery.</p>
+      </div>
+
+      <div style="max-width:760px; margin:0 auto; background:#FFF; border-radius:var(--radius-lg); padding:2.5rem; box-shadow:var(--shadow-md);">
+        <form id="onlineAppointmentForm" class="quick-form">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+            <div class="form-group">
+              <label data-i18n="fieldService">Select Required Service / Test</label>
+              <select id="appService" class="form-select" required>
+                <option value="Nurse @ Home Visit">Nurse @ Home (Catheter / Dressing / Shift)</option>
+                <option value="Doctor Home Consultation">Doctor Home Visit / Consultation</option>
+                <option value="Home Sample Collection">Home Sample Collection (Blood/Urine)</option>
+                <option value="Medical Equipment Rental">Medical Equipment (Oxygen/BiPAP/Bed)</option>
+                <option value="Physiotherapy Session">Physiotherapy Session @ Home</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Select Country / Location</label>
+              <select id="appCountry" class="form-select" required>
+                <option value="India">India (+91 7459977911)</option>
+                <option value="Nepal">Nepal (+977 9848094547)</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+            <div class="form-group">
+              <label data-i18n="fieldName">Patient / Contact Name</label>
+              <input type="text" id="appName" class="form-input" placeholder="e.g. Rajesh Kumar" required>
+            </div>
+            <div class="form-group">
+              <label data-i18n="fieldPhone">Mobile Number (WhatsApp)</label>
+              <input type="tel" id="appPhone" class="form-input" placeholder="+91 XXXXX XXXXX / +977 XXXXXXXXXX" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label data-i18n="fieldLocation">Complete Address / City</label>
+            <input type="text" id="appAddress" class="form-input" placeholder="House/Flat No., Landmark, City/Town" required>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+            <div class="form-group">
+              <label data-i18n="fieldDate">Preferred Appointment Date</label>
+              <input type="date" id="appDate" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label data-i18n="fieldSlot">Preferred Time Slot</label>
+              <select id="appSlot" class="form-select" required>
+                <option value="Morning (7:00 AM - 11:00 AM)">Morning (7:00 AM - 11:00 AM)</option>
+                <option value="Afternoon (12:00 PM - 4:00 PM)">Afternoon (12:00 PM - 4:00 PM)</option>
+                <option value="Evening (5:00 PM - 9:00 PM)">Evening (5:00 PM - 9:00 PM)</option>
+                <option value="Immediate Emergency">Immediate Emergency Visit</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label data-i18n="fieldNotes">Medical Condition / Notes</label>
+            <textarea id="appNotes" class="form-textarea" rows="3" placeholder="Describe symptoms, required procedures, or medical history..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%; font-size:1.05rem; padding:0.9rem;">
+            <i class="fab fa-whatsapp"></i> Confirm Online Appointment via WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comprehensive Services Section -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Transactional Care at Home</span>
+        <h2 class="section-title" data-i18n="servicesHeading">Comprehensive Care at Home Services</h2>
+        <p class="section-desc" data-i18n="servicesSubheading">Professional medical treatments provided in the safety and comfort of your home.</p>
+      </div>
+
+      <div class="filter-bar">
+        <button class="tab-btn active" data-category="all" data-i18n="tabAll">All Services</button>
+        <button class="tab-btn" data-category="nurse" data-i18n="tabNurse">Nurse @ Home</button>
+        <button class="tab-btn" data-category="doctor" data-i18n="tabDoctor">Doctor @ Home</button>
+        <button class="tab-btn" data-category="equipment" data-i18n="tabEquipment">Equipment @ Home</button>
+        <button class="tab-btn" data-category="diagnostics" data-i18n="tabDiagnostics">Diagnostics @ Home</button>
+        <button class="tab-btn" data-category="physio" data-i18n="tabPhysio">Physiotherapy @ Home</button>
+      </div>
+
+      <div id="servicesContainer" class="services-grid"></div>
+    </div>
+  </section>
+
+  <!-- Why Choose Upachar -->
+  <section id="about" class="section why-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Quality Assurance</span>
+        <h2 class="section-title" data-i18n="whyChooseTitle">Why Families Trust Upachar.org</h2>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-user-check"></i></div>
+          <h3 class="why-title">100% Certified Staff</h3>
+          <p class="why-desc">Background-checked, qualified ICU nurses, licensed doctors and certified therapists.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-globe"></i></div>
+          <h3 class="why-title">India & Nepal Coverage</h3>
+          <p class="why-desc">Providing seamless doorstep healthcare across regions in India & Nepal.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-hand-holding-usd"></i></div>
+          <h3 class="why-title">Transparent Costing</h3>
+          <p class="why-desc">Hospital-grade care with clear upfront prices and no hidden costs.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-clock"></i></div>
+          <h3 class="why-title">24/7 Emergency Support</h3>
+          <p class="why-desc">Round-the-clock patient monitoring, quick doctor consultations and hotline assistance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs Section -->
+  <section class="section" style="background:var(--bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Have Questions?</span>
+        <h2 class="section-title" data-i18n="faqTitle">Frequently Asked Questions</h2>
+      </div>
+
+      <div id="faqAccordion" class="faq-accordion"></div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section" style="background:linear-gradient(135deg, #1E295B 0%, #131B3F 100%); color:#FFFFFF;">
+    <div class="container" style="text-align:center;">
+      <h2 style="font-size:2.25rem; font-weight:800; margin-bottom:1rem;">Contact Upachar Home Healthcare Desk</h2>
+      <p style="font-size:1.1rem; color:#CBD5E1; max-width:700px; margin:0 auto 2rem;">
+        Reach out for nursing, doctor appointments, or doorstep lab sample collection.
+      </p>
+      <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+        <a href="tel:+917459977911" class="btn btn-primary" style="font-size:1.05rem; padding:0.85rem 1.75rem;">
+          <i class="fas fa-phone-alt"></i> India: +91 7459977911
+        </a>
+        <a href="tel:+9779848094547" class="btn btn-primary" style="font-size:1.05rem; padding:0.85rem 1.75rem; background:#2A3B82;">
+          <i class="fas fa-phone-alt"></i> Nepal: +977 9848094547
+        </a>
+        <a href="mailto:upachar.org@gmail.com" class="btn btn-outline" style="font-size:1.05rem; padding:0.85rem 1.75rem; color:#FFF; border-color:rgba(255,255,255,0.4);">
+          <i class="fas fa-envelope"></i> upachar.org@gmail.com
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Modal -->
+  <div id="bookingModal" class="modal-overlay">
+    <div class="modal-content">
+      <button id="closeModalBtn" class="modal-close"><i class="fas fa-times"></i></button>
+      <div style="margin-bottom:1.5rem;">
+        <h3 style="font-size:1.35rem; color:var(--primary); font-weight:700;">Book Home Healthcare Service</h3>
+        <p style="font-size:0.875rem; color:var(--text-muted);">Fill in details to instantly connect with our care desk on WhatsApp.</p>
+      </div>
+
+      <form id="modalBookingForm" class="quick-form">
+        <div class="form-group">
+          <label>Select Service / Test</label>
+          <select id="modalServiceSelect" class="form-select" required></select>
+        </div>
+
+        <div class="form-group">
+          <label>Select Country / Location</label>
+          <select id="modalCountry" class="form-select" required>
+            <option value="India">India (+91 7459977911)</option>
+            <option value="Nepal">Nepal (+977 9848094547)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Patient / Contact Name</label>
+          <input type="text" id="modalName" class="form-input" placeholder="Full Name" required>
+        </div>
+
+        <div class="form-group">
+          <label>Mobile Number (WhatsApp)</label>
+          <input type="tel" id="modalPhone" class="form-input" placeholder="+91 / +977 XXXXXXXXXX" required>
+        </div>
+
+        <div class="form-group">
+          <label>Home Address / Location</label>
+          <input type="text" id="modalAddress" class="form-input" placeholder="House No., Sector, City" required>
+        </div>
+
+        <div class="form-group">
+          <label>Preferred Date & Time</label>
+          <input type="text" id="modalDateTime" class="form-input" placeholder="e.g. Today 4:00 PM / Tomorrow morning">
+        </div>
+
+        <div class="form-group">
+          <label>Medical Condition / Notes (Optional)</label>
+          <textarea id="modalNotes" class="form-textarea" rows="2" placeholder="Describe requirements..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-whatsapp" style="width:100%; margin-top:0.75rem;">
+          <i class="fab fa-whatsapp"></i> Confirm Booking via WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Floating Action Buttons -->
+  <div class="floating-actions">
+    <a href="https://wa.me/917459977911" target="_blank" class="float-btn float-wa" title="WhatsApp India (+91 7459977911)">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+917459977911" class="float-btn float-call" title="Call India Hotline">
+      <i class="fas fa-phone-alt"></i>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Upachar.org</h3>
+          <p>
+            Upachar.org delivers professional, compassionate, hospital-standard healthcare directly into your home across India & Nepal.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#costSearch">Cost Comparison</a></li>
+            <li><a href="#sampleCollection">Home Sample Collection</a></li>
+            <li><a href="#appointment">Online Appointment</a></li>
+            <li><a href="#services">Our Services</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Key Services</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Nurse @ Home</a></li>
+            <li><a href="#services">Doctor Home Visit</a></li>
+            <li><a href="#sampleCollection">Blood & Urine Tests</a></li>
+            <li><a href="#services">Medical Equipment</a></li>
+            <li><a href="#services">Physiotherapy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Contact Us</h4>
+          <p style="margin-bottom:0.5rem;"><i class="fas fa-phone-alt" style="color:var(--cyan);"></i> 🇮🇳 India: +91-7459977911</p>
+          <p style="margin-bottom:0.5rem;"><i class="fas fa-phone-alt" style="color:var(--cyan);"></i> 🇳🇵 Nepal: +977-9848094547</p>
+          <p style="margin-bottom:0.5rem;"><i class="fas fa-envelope" style="color:var(--cyan);"></i> upachar.org@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Upachar Home Healthcare Services (upachar.org). All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
