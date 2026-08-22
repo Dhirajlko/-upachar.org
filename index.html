@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UPACHAR — Healthcare Made Simple | Treatment Cost & Home Care</title>
-  <meta name="description" content="UPACHAR — Healthcare Made Simple. Search & compare treatment & surgery costs across Delhi, Lucknow, and Kathmandu. ICU Nurses, Doctors, Equipment & Diagnostics at doorstep.">
-  <meta name="keywords" content="UPACHAR Healthcare Made Simple, Knee replacement cost, Cataract surgery cost, Heart bypass cost, Kidney stone laser cost, Upachar home care, Upachar healthcare">
+  <title>UPACHAR — Healthcare Made Simple | Doctors, Hospitals, Treatments & Home Care</title>
+  <meta name="description" content="UPACHAR — Healthcare Made Simple. Search top doctors, compare accredited hospitals, surgery costs, medical packages, online consultations & doorstep home healthcare in India & Nepal.">
+  <meta name="keywords" content="Find Doctors, Compare Hospitals, Treatment Cost, Surgery Packages, Online Consultation, Home Nursing, Upachar Healthcare, Medical Tourism India Nepal">
 
   <link rel="icon" href="assets/images/logo.jpeg" type="image/jpeg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -30,7 +30,7 @@
     </div>
   </div>
 
-  <!-- Header & Navigation -->
+  <!-- Header & Exact 9-Item Navigation Bar -->
   <header class="main-header">
     <div class="container header-container">
       <a href="index.html" class="brand-logo">
@@ -41,19 +41,98 @@
         </div>
       </a>
 
+      <!-- 9-ITEM MAIN NAVIGATION MENU WITH DROPDOWNS -->
       <nav class="nav-menu">
-        <a href="#home" class="nav-link active" data-i18n="navHome">Home</a>
-        <a href="#surgeryCosts" class="nav-link" data-i18n="navCostSearch">Treatment & Surgery Costs</a>
-        <a href="#requestQuote" class="nav-link">Request Quote</a>
-        <a href="#services" class="nav-link" data-i18n="navServices">Home Services</a>
-        <a href="#sampleCollection" class="nav-link" data-i18n="navSampleCollection">Home Sample Collection</a>
-        <a href="#contact" class="nav-link" data-i18n="navContact">Contact Us</a>
+        <!-- 1. HOME -->
+        <div class="nav-item">
+          <a href="#home" class="nav-link active" data-i18n="navHome">HOME</a>
+        </div>
+
+        <!-- 2. ABOUT US -->
+        <div class="nav-item">
+          <a href="#about" class="nav-link" data-i18n="navAboutUs">ABOUT US</a>
+        </div>
+
+        <!-- 3. SERVICES (Dropdown) -->
+        <div class="nav-item">
+          <a href="#services" class="nav-link" data-i18n="navServices">SERVICES <i class="fas fa-chevron-down" style="font-size:0.65rem;"></i></a>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">Find Healthcare</div>
+            <a href="#doctors" class="dropdown-item"><span>Doctors & Specialists</span> <i class="fas fa-user-md"></i></a>
+            <a href="#hospitals" class="dropdown-item"><span>Hospitals & Clinics</span> <i class="fas fa-hospital"></i></a>
+            
+            <div class="dropdown-header">Compare & Choose</div>
+            <a href="#surgeryCosts" class="dropdown-item"><span>Treatment & Surgery Cost</span> <i class="fas fa-tags"></i></a>
+            <a href="#surgeryCosts" class="dropdown-item"><span>Medical Packages</span> <i class="fas fa-box-open"></i></a>
+
+            <div class="dropdown-header">Book & Consult</div>
+            <a href="#online" class="dropdown-item"><span>Appointments & Tele-Consult</span> <i class="fas fa-laptop-medical"></i></a>
+            <a href="#requestQuote" class="dropdown-item"><span>Second Medical Opinion</span> <i class="fas fa-notes-medical"></i></a>
+
+            <div class="dropdown-header">Healthcare at Home</div>
+            <a href="#homeService" class="dropdown-item"><span>Nursing, Diagnostics, Physio</span> <i class="fas fa-home"></i></a>
+
+            <div class="dropdown-header">Healthcare Abroad & Complete Care</div>
+            <a href="#abroad" class="dropdown-item"><span>Medical Tourism (India/Nepal)</span> <i class="fas fa-plane-departure"></i></a>
+          </div>
+        </div>
+
+        <!-- 4. TREATMENT (Dropdown matching MUFA screenshot) -->
+        <div class="nav-item">
+          <a href="#treatments" class="nav-link" data-i18n="navTreatment">TREATMENT <i class="fas fa-chevron-down" style="font-size:0.65rem;"></i></a>
+          <div class="dropdown-menu">
+            <a href="#surgeryCosts" class="dropdown-item"><span>Cancer Treatment & Oncology</span> <i class="fas fa-ribbon"></i></a>
+            <a href="#surgeryCosts" class="dropdown-item"><span>Heart Care & Surgery (CABG)</span> <i class="fas fa-heartbeat"></i></a>
+            <a href="#surgeryCosts" class="dropdown-item"><span>Bone, Joint & Spine Care (Knee/Hip)</span> <i class="fas fa-bone"></i></a>
+            <a href="#surgeryCosts" class="dropdown-item"><span>Brain & Spine Treatment</span> <i class="fas fa-brain"></i></a>
+            <a href="#surgeryCosts" class="dropdown-item"><span>Liver & Digestive Treatment</span> <i class="fas fa-procedures"></i></a>
+            <a href="#surgeryCosts" class="dropdown-item"><span>Kidney Treatment & Laser Lithotripsy</span> <i class="fas fa-x-ray"></i></a>
+            <a href="#surgeryCosts" class="dropdown-item"><span>Organ Transplant (Liver/Kidney)</span> <i class="fas fa-hand-holding-medical"></i></a>
+            <a href="#surgeryCosts" class="dropdown-item"><span>Urology & Prostate Care</span> <i class="fas fa-user-nurse"></i></a>
+            <a href="#surgeryCosts" class="dropdown-item"><span>Advanced Robotic Surgery</span> <i class="fas fa-robot"></i></a>
+            <a href="#surgeryCosts" class="dropdown-item"><span>IVF & Fertility Treatment</span> <i class="fas fa-baby"></i></a>
+          </div>
+        </div>
+
+        <!-- 5. HOSPITALS (Dropdown matching MUFA screenshot) -->
+        <div class="nav-item">
+          <a href="#hospitals" class="nav-link" data-i18n="navHospitals">HOSPITALS <i class="fas fa-chevron-down" style="font-size:0.65rem;"></i></a>
+          <div class="dropdown-menu">
+            <a href="#hospitals" class="dropdown-item"><span>Indraprastha Apollo Hospitals, New Delhi</span></a>
+            <a href="#hospitals" class="dropdown-item"><span>Fortis Memorial Research Institute (FMRI), Gurugram</span></a>
+            <a href="#hospitals" class="dropdown-item"><span>Medanta - The Medicity, Gurugram</span></a>
+            <a href="#hospitals" class="dropdown-item"><span>Max Super Speciality Hospital, Saket, New Delhi</span></a>
+            <a href="#hospitals" class="dropdown-item"><span>Manipal Hospitals, Dwarka, New Delhi</span></a>
+            <a href="#hospitals" class="dropdown-item"><span>BLK-Max Super Speciality Hospital, New Delhi</span></a>
+            <a href="#hospitals" class="dropdown-item"><span>Fortis Escorts Heart Institute, New Delhi</span></a>
+          </div>
+        </div>
+
+        <!-- 6. DOCTORS -->
+        <div class="nav-item">
+          <a href="#doctors" class="nav-link" data-i18n="navDoctors">DOCTORS</a>
+        </div>
+
+        <!-- 7. HOME SERVICE -->
+        <div class="nav-item">
+          <a href="#homeService" class="nav-link" data-i18n="navHomeService">HOME SERVICE</a>
+        </div>
+
+        <!-- 8. ONLINE -->
+        <div class="nav-item">
+          <a href="#online" class="nav-link" data-i18n="navOnline">ONLINE</a>
+        </div>
+
+        <!-- 9. CONTACT US -->
+        <div class="nav-item">
+          <a href="#contact" class="nav-link" data-i18n="navContactUs">CONTACT US</a>
+        </div>
       </nav>
 
       <div class="nav-cta-group">
         <a href="#requestQuote" class="btn btn-primary">
-          <i class="fas fa-calculator"></i>
-          <span>Get Free Estimate</span>
+          <i class="fas fa-notes-medical"></i>
+          <span>Free Consultation</span>
         </a>
         <button class="mobile-toggle" aria-label="Toggle menu">
           <i class="fas fa-bars"></i>
@@ -62,80 +141,91 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with Universal Search Box (Inspired by Peace & MyMedTrip) -->
   <section id="home" class="hero-section">
     <div class="hero-overlay"></div>
     <div class="container">
-      <div class="hero-grid">
-        <!-- Hero Content -->
-        <div class="hero-content">
-          <div class="hero-badge">
-            <i class="fas fa-heartbeat"></i>
-            <span data-i18n="heroBadge">🏆 UPACHAR — Healthcare Made Simple</span>
-          </div>
-          <h1 class="hero-title" data-i18n="heroTitle">
-            Search & Compare Your Treatment & Surgery Cost
-          </h1>
-          <p class="hero-subtitle" data-i18n="heroSubtitle">
-            Find the Right Treatment. Compare Hospitals. Know the Estimated Cost across Delhi, Lucknow, and Kathmandu before making an informed healthcare decision.
-          </p>
+      <div class="hero-badge">
+        <i class="fas fa-heartbeat"></i>
+        <span data-i18n="heroBadge">🏆 UPACHAR — Healthcare Made Simple</span>
+      </div>
+      <h1 class="hero-title" data-i18n="heroTitle">
+        Find Healthcare. Compare Costs. Book Appointments.
+      </h1>
+      <p class="hero-subtitle" data-i18n="heroSubtitle">
+        Search top doctors, compare accredited hospitals, explore surgery packages, or request healthcare at home across India & Nepal.
+      </p>
 
-          <div class="hero-actions">
-            <a href="#surgeryCosts" class="btn btn-primary">
-              <i class="fas fa-search-dollar"></i>
-              <span data-i18n="heroCompare">Search & Compare Costs</span>
-            </a>
-            <a href="#requestQuote" class="btn btn-outline" style="color:#FFF; border-color:rgba(255,255,255,0.3);">
-              <i class="fas fa-file-invoice-dollar"></i>
-              <span>Request Personal Estimate</span>
-            </a>
-          </div>
+      <!-- UNIVERSAL SEARCH BOX (Peace Medical Tourism / VivaVel / MyMedTrip Inspired) -->
+      <div class="hero-search-box">
+        <select id="universalSearchCategory" class="search-select">
+          <option value="all">All Categories</option>
+          <option value="doctors">Doctors & Specialists</option>
+          <option value="hospitals">Hospitals & Clinics</option>
+          <option value="treatments">Treatments & Surgeries</option>
+          <option value="home">Healthcare at Home</option>
+        </select>
 
-          <!-- Hero Metrics -->
-          <div class="hero-stats">
-            <div class="stat-item">
-              <h4 data-i18n="statPatients">15,000+</h4>
-              <p data-i18n="statPatientsLabel">Patients Assisted</p>
-            </div>
-            <div class="stat-item">
-              <h4 data-i18n="statNurses">250+</h4>
-              <p data-i18n="statNursesLabel">Hospitals & Specialists</p>
-            </div>
-            <div class="stat-item">
-              <h4 data-i18n="statCities">24/7</h4>
-              <p data-i18n="statCitiesLabel">Support Desk</p>
-            </div>
-            <div class="stat-item">
-              <h4 data-i18n="statRating">4.9 ★</h4>
-              <p data-i18n="statRatingLabel">Trust Score</p>
-            </div>
-          </div>
-        </div>
+        <input type="text" id="universalSearchInput" class="search-input-field" placeholder="Search Doctor / Hospital / Treatment Name..." data-i18n="searchPlaceholder">
 
-        <!-- Quick Quote Card -->
-        <div class="hero-card">
-          <div class="card-header">
-            <h3>Direct Contact & Medical Desk</h3>
-            <p>UPACHAR — Healthcare Made Simple in India & Nepal.</p>
-          </div>
+        <button id="universalSearchBtn" class="btn btn-primary" style="padding:0.85rem 1.75rem;">
+          <i class="fas fa-search"></i> <span data-i18n="btnSearch">SEARCH</span>
+        </button>
+      </div>
 
-          <div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom:1.5rem;">
-            <a href="tel:+917459977911" class="btn btn-navy" style="justify-content:flex-start;">
-              <i class="fas fa-phone-alt"></i> <span>🇮🇳 Call India: +91-7459977911</span>
-            </a>
-            <a href="tel:+9779848094547" class="btn btn-navy" style="justify-content:flex-start; background:#2A3B82;">
-              <i class="fas fa-phone-alt"></i> <span>🇳🇵 Call Nepal: +977-9848094547</span>
-            </a>
-            <a href="https://wa.me/917459977911" target="_blank" class="btn btn-whatsapp" style="justify-content:flex-start;">
-              <i class="fab fa-whatsapp"></i> <span>WhatsApp Desk (+91 7459977911)</span>
-            </a>
-          </div>
+      <!-- Action Buttons (MyMedTrip style) -->
+      <div class="hero-quick-ctas">
+        <a href="https://wa.me/917459977911" target="_blank" class="btn btn-whatsapp">
+          <i class="fab fa-whatsapp"></i> <span data-i18n="btnFreeConsult">Chat for FREE Consultation</span>
+        </a>
+        <a href="#requestQuote" class="btn btn-outline" style="color:#FFF; border-color:rgba(255,255,255,0.4);">
+          <i class="fas fa-edit"></i> <span data-i18n="btnFreeEnquiry">Fill Form for FREE Enquiry</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-          <div style="font-size:0.85rem; color:var(--text-muted); background:var(--bg-alt); padding:0.75rem; border-radius:var(--radius-sm);">
-            <i class="fas fa-envelope" style="color:var(--accent);"></i> Email: <strong>upachar.org@gmail.com</strong>
-          </div>
+  <!-- DOCTORS DIRECTORY SECTION (Inspired by VivaVel screenshot) -->
+  <section id="doctors" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Senior Specialists</span>
+        <h2 class="section-title" data-i18n="doctorsHeading">Top Doctors & Specialists</h2>
+        <p class="section-desc" data-i18n="doctorsSubheading">Consult renowned senior surgeons and medical consultants across India & Nepal.</p>
+      </div>
+
+      <!-- Doctor Filters (VivaVel style: Select Country, Select Department, Search Doctor) -->
+      <div class="cost-search-box">
+        <select id="doctorCountryFilter" class="form-select" style="max-width:200px;">
+          <option value="all" data-i18n="selectCountry">Select Country</option>
+          <option value="India">India</option>
+          <option value="Nepal">Nepal</option>
+        </select>
+
+        <select id="doctorDeptFilter" class="form-select" style="max-width:240px;">
+          <option value="all" data-i18n="selectDept">Select Department</option>
+        </select>
+
+        <div style="flex-grow:1;">
+          <input type="text" id="doctorSearchInput" class="form-input" placeholder="Search Doctor by Name..." data-i18n="filterDoctorInput">
         </div>
       </div>
+
+      <!-- Doctors Cards Grid (Rendered by app.js) -->
+      <div id="doctorsGrid" class="doctors-grid"></div>
+    </div>
+  </section>
+
+  <!-- HOSPITALS DIRECTORY SECTION (Inspired by MUFA screenshot) -->
+  <section id="hospitals" class="section" style="background:var(--bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">World-Class Centers</span>
+        <h2 class="section-title" data-i18n="hospitalsHeading">Leading Accredited Hospitals</h2>
+        <p class="section-desc" data-i18n="hospitalsSubheading">World-class hospitals with advanced medical technology and international patient care.</p>
+      </div>
+
+      <div id="hospitalsGrid" class="hospitals-grid"></div>
     </div>
   </section>
 
@@ -148,21 +238,11 @@
         <p class="section-desc" data-i18n="surgerySubtitle">Find the Right Treatment. Compare Hospitals. Know the Estimated Cost across Delhi, Lucknow, and Kathmandu.</p>
       </div>
 
-      <!-- Search & Filter Controls -->
       <div class="cost-search-box">
         <div style="flex-grow:1; min-width:240px;">
           <label style="font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-bottom:0.25rem; display:block;" data-i18n="selectTreatment">Select Treatment / Surgery</label>
           <select id="surgeryTreatmentSelect" class="form-select">
             <option value="all" data-i18n="allTreatments">All Treatments & Surgeries</option>
-            <option value="Knee Replacement">Knee Replacement Surgery</option>
-            <option value="Cataract">Cataract Eye Surgery</option>
-            <option value="Bypass">Heart Bypass Surgery (CABG)</option>
-            <option value="Stone">Kidney Stone Laser Treatment</option>
-            <option value="Cancer">Cancer Treatment / Chemotherapy</option>
-            <option value="IVF">IVF Fertility Treatment</option>
-            <option value="Spine">Spine Surgery</option>
-            <option value="Dental">Dental Implant</option>
-            <option value="Gallbladder">Gallbladder Surgery</option>
           </select>
         </div>
 
@@ -183,7 +263,6 @@
         </div>
       </div>
 
-      <!-- Hospital & Cost Comparison Table -->
       <div class="cost-table-wrap">
         <table class="cost-table">
           <thead>
@@ -195,110 +274,46 @@
               <th data-i18n="colPackage">Package Details</th>
             </tr>
           </thead>
-          <tbody id="surgeryTableBody">
-            <!-- Dynamically populated by app.js -->
-          </tbody>
+          <tbody id="surgeryTableBody"></tbody>
         </table>
       </div>
-
-      <div style="margin-top:1rem; font-size:0.825rem; color:var(--text-muted); text-align:center;">
-        <em>* Displayed prices are indicative estimates and may vary depending on the patient's medical condition, treatment plan, doctor, hospital, investigations, medicines, length of stay, and other applicable charges.</em>
-      </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS SECTION -->
-  <section class="section" style="background:var(--bg-alt);">
+  <!-- HEALTHCARE AT HOME SECTION (#homeService) -->
+  <section id="homeService" class="section" style="background:var(--bg-alt);">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Step-by-Step Guide</span>
-        <h2 class="section-title">How It Works</h2>
-        <p class="section-desc">5 easy steps to find the right treatment, compare costs, and choose suitable hospitals.</p>
+        <span class="section-tag">Doorstep Care</span>
+        <h2 class="section-title">Healthcare at Home</h2>
+        <p class="section-desc">Professional nursing care, doctor visits, diagnostics, equipment, and physiotherapy at your residence.</p>
       </div>
 
-      <div class="how-grid">
-        <div class="how-card">
-          <div class="how-num">01</div>
-          <h4 data-i18n="how1Title">1. Search Your Treatment</h4>
-          <p data-i18n="how1Desc">Enter the name of your treatment, surgery, procedure, or medical condition (Knee Replacement, Cataract, Heart Bypass, Kidney Stone, IVF, Cancer, Spine, Dental, Gallbladder).</p>
-        </div>
+      <div id="servicesContainer" class="services-grid"></div>
+    </div>
+  </section>
 
-        <div class="how-card">
-          <div class="how-num">02</div>
-          <h4 data-i18n="how2Title">2. Compare Treatment Costs</h4>
-          <p data-i18n="how2Desc">Compare estimated costs, hospital charges, surgeon fees, room options, diagnostic costs, and pre/post-treatment package inclusions.</p>
-        </div>
+  <!-- ONLINE CONSULTATIONS SECTION (#online) -->
+  <section id="online" class="section">
+    <div class="container" style="text-align:center; max-width:800px;">
+      <span class="section-tag">Tele-Medicine</span>
+      <h2 class="section-title">Book & Consult Online</h2>
+      <p class="section-desc" style="margin-bottom:2rem;">
+        Get second medical opinions from senior hospital specialists without leaving your home. Send medical reports via WhatsApp for instant doctor review.
+      </p>
 
-        <div class="how-card">
-          <div class="how-num">03</div>
-          <h4 data-i18n="how3Title">3. Compare Hospitals & Specialists</h4>
-          <p data-i18n="how3Desc">Explore top accredited hospitals across Delhi, Lucknow, and Kathmandu with specialist profiles and facilities.</p>
-        </div>
-
-        <div class="how-card">
-          <div class="how-num">04</div>
-          <h4 data-i18n="how4Title">4. Request a Personalized Quote</h4>
-          <p data-i18n="how4Desc">Submit your medical details & reports to receive a customized treatment cost estimate from selected hospitals.</p>
-        </div>
-
-        <div class="how-card">
-          <div class="how-num">05</div>
-          <h4 data-i18n="how5Title">5. Make an Informed Decision</h4>
-          <p data-i18n="how5Desc">Understand your options clearly to discuss with medical professionals and choose what fits your medical needs & budget.</p>
-        </div>
+      <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+        <button class="btn btn-whatsapp" onclick="openBookingModal('doctor', 'Online Second Opinion Consultation')">
+          <i class="fab fa-whatsapp"></i> Book Online Consultation
+        </button>
+        <a href="#requestQuote" class="btn btn-navy">
+          <i class="fas fa-file-pdf"></i> Submit Reports for Opinion
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- WHY COMPARE BEFORE YOU DECIDE -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Smarter Choices</span>
-        <h2 class="section-title">Why Compare Before You Decide?</h2>
-      </div>
-
-      <div class="why-grid">
-        <div class="why-card">
-          <div class="why-icon"><i class="fas fa-wallet"></i></div>
-          <h3 class="why-title" data-i18n="whyBudget">Understand Your Budget</h3>
-          <p class="why-desc" data-i18n="whyBudgetDesc">Get a clearer idea of potential treatment expenses before travelling or scheduling your procedure.</p>
-        </div>
-
-        <div class="why-card">
-          <div class="why-icon"><i class="fas fa-hospital"></i></div>
-          <h3 class="why-title" data-i18n="whyHospitals">Compare Hospitals</h3>
-          <p class="why-desc" data-i18n="whyHospitalsDesc">Review multiple healthcare providers instead of relying on a single quotation.</p>
-        </div>
-
-        <div class="why-card">
-          <div class="why-icon"><i class="fas fa-user-md"></i></div>
-          <h3 class="why-title" data-i18n="whySpecialists">Find Specialists</h3>
-          <p class="why-desc" data-i18n="whySpecialistsDesc">Explore doctors and specialists relevant to your specific treatment or surgery.</p>
-        </div>
-
-        <div class="why-card">
-          <div class="why-icon"><i class="fas fa-globe-asia"></i></div>
-          <h3 class="why-title" data-i18n="whyDestinations">Compare Destinations</h3>
-          <p class="why-desc" data-i18n="whyDestinationsDesc">Compare estimated costs and treatment options across different cities and countries (Delhi, Lucknow, Kathmandu).</p>
-        </div>
-
-        <div class="why-card">
-          <div class="why-icon"><i class="fas fa-list-check"></i></div>
-          <h3 class="why-title" data-i18n="whyInclusions">Understand Package Inclusions</h3>
-          <p class="why-desc" data-i18n="whyInclusionsDesc">Check what is included in each treatment package and identify additional or excluded expenses.</p>
-        </div>
-
-        <div class="why-card">
-          <div class="why-icon"><i class="fas fa-hands-helping"></i></div>
-          <h3 class="why-title">Get Personal Assistance</h3>
-          <p class="why-desc">Our healthcare support team helps you connect with hospitals and coordinate all next steps seamlessy.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PERSONALIZED TREATMENT ESTIMATE FORM SECTION -->
+  <!-- PERSONALIZED TREATMENT ESTIMATE FORM SECTION (#requestQuote) -->
   <section id="requestQuote" class="section" style="background:var(--bg-alt);">
     <div class="container">
       <div class="section-header">
@@ -370,36 +385,19 @@
           </button>
         </form>
       </div>
-
-      <!-- Important Medical Disclaimer Box -->
-      <div class="disclaimer-box" style="max-width:800px; margin:2.5rem auto 0;">
-        <h4 data-i18n="disclaimerTitle"><i class="fas fa-exclamation-triangle"></i> Important Medical Disclaimer</h4>
-        <p data-i18n="disclaimerText">
-          The costs displayed on this platform are estimated or indicative costs for informational purposes only and should not be considered a final medical quotation. Actual treatment costs may vary depending on the patient's diagnosis, medical condition, treatment protocol, investigations, medicines, complications, length of hospital stay, doctor fees, and other factors. A final treatment plan and quotation must be obtained directly from the treating hospital or qualified healthcare provider. This platform does not replace professional medical advice, diagnosis, or consultation.
-        </p>
-      </div>
     </div>
   </section>
 
-  <!-- HOME CARE SERVICES SECTION -->
-  <section id="services" class="section">
+  <!-- ABOUT US SECTION (#about) -->
+  <section id="about" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Transactional Care at Home</span>
-        <h2 class="section-title" data-i18n="servicesHeading">Comprehensive Care at Home Services</h2>
-        <p class="section-desc" data-i18n="servicesSubheading">Professional medical treatments provided in the safety and comfort of your home.</p>
+        <span class="section-tag">About UPACHAR</span>
+        <h2 class="section-title">Healthcare Made Simple</h2>
+        <p class="section-desc">
+          UPACHAR connects patients across India & Nepal with accredited hospitals, top doctors, transparent surgery cost comparison, and professional doorstep healthcare.
+        </p>
       </div>
-
-      <div class="filter-bar">
-        <button class="tab-btn active" data-category="all" data-i18n="tabAll">All Services</button>
-        <button class="tab-btn" data-category="nurse" data-i18n="tabNurse">Nurse @ Home</button>
-        <button class="tab-btn" data-category="doctor" data-i18n="tabDoctor">Doctor @ Home</button>
-        <button class="tab-btn" data-category="equipment" data-i18n="tabEquipment">Equipment @ Home</button>
-        <button class="tab-btn" data-category="diagnostics" data-i18n="tabDiagnostics">Diagnostics @ Home</button>
-        <button class="tab-btn" data-category="physio" data-i18n="tabPhysio">Physiotherapy @ Home</button>
-      </div>
-
-      <div id="servicesContainer" class="services-grid"></div>
     </div>
   </section>
 
@@ -408,8 +406,8 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Pathology at Doorstep</span>
-        <h2 class="section-title" data-i18n="sampleTitle">Home Sample Collection</h2>
-        <p class="section-desc" data-i18n="sampleSubtitle">Certified phlebotomists collect blood & urine samples right at your doorstep. 100% sterile single-use kits.</p>
+        <h2 class="section-title">Home Sample Collection</h2>
+        <p class="section-desc">Certified phlebotomists collect blood & urine samples right at your doorstep. 100% sterile single-use kits.</p>
       </div>
 
       <div id="sampleTestsGrid" class="packages-grid"></div>
@@ -428,12 +426,12 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact Section (#contact) -->
   <section id="contact" class="section" style="background:linear-gradient(135deg, #1E295B 0%, #131B3F 100%); color:#FFFFFF;">
     <div class="container" style="text-align:center;">
       <h2 style="font-size:2.25rem; font-weight:800; margin-bottom:1rem;">Your Healthcare Journey Starts With Better Information</h2>
       <p style="font-size:1.1rem; color:#CBD5E1; max-width:700px; margin:0 auto 2rem;">
-        Search. Compare. Consult. Decide. Don't choose a hospital based on price alone. UPACHAR — Healthcare Made Simple.
+        Search. Compare. Consult. Decide. UPACHAR — Healthcare Made Simple.
       </p>
       <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
         <a href="tel:+917459977911" class="btn btn-primary" style="font-size:1.05rem; padding:0.85rem 1.75rem;">
@@ -454,8 +452,8 @@
     <div class="modal-content">
       <button id="closeModalBtn" class="modal-close"><i class="fas fa-times"></i></button>
       <div style="margin-bottom:1.5rem;">
-        <h3 style="font-size:1.35rem; color:var(--primary); font-weight:700;">Book Home Healthcare Service</h3>
-        <p style="font-size:0.875rem; color:var(--text-muted);">Fill in details to instantly connect with our care desk on WhatsApp.</p>
+        <h3 style="font-size:1.35rem; color:var(--primary); font-weight:700;">Book Healthcare Consultation</h3>
+        <p style="font-size:0.875rem; color:var(--text-muted);">Fill in details to instantly connect with our medical desk on WhatsApp.</p>
       </div>
 
       <form id="modalBookingForm" class="quick-form">
@@ -488,11 +486,6 @@
         </div>
 
         <div class="form-group">
-          <label>Preferred Date & Time</label>
-          <input type="text" id="modalDateTime" class="form-input" placeholder="e.g. Today 4:00 PM / Tomorrow morning">
-        </div>
-
-        <div class="form-group">
           <label>Medical Condition / Notes (Optional)</label>
           <textarea id="modalNotes" class="form-textarea" rows="2" placeholder="Describe requirements..."></textarea>
         </div>
@@ -521,30 +514,34 @@
         <div class="footer-brand">
           <h3>Upachar.org</h3>
           <p>
-            UPACHAR — Healthcare Made Simple. Search. Compare. Consult. Decide. Providing medical treatment & surgery cost comparison and doorstep healthcare across India & Nepal.
+            UPACHAR — Healthcare Made Simple. Search. Compare. Consult. Decide. Medical Tourism & Doorstep Healthcare across India & Nepal.
           </p>
         </div>
 
         <div>
-          <h4 class="footer-title">Quick Links</h4>
+          <h4 class="footer-title">Navigation Menu</h4>
           <ul class="footer-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#surgeryCosts">Treatment & Surgery Costs</a></li>
-            <li><a href="#requestQuote">Request Estimate Quote</a></li>
-            <li><a href="#sampleCollection">Home Sample Collection</a></li>
-            <li><a href="#services">Our Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#surgeryCosts">Treatment</a></li>
+            <li><a href="#hospitals">Hospitals</a></li>
+            <li><a href="#doctors">Doctors</a></li>
+            <li><a href="#homeService">Home Service</a></li>
+            <li><a href="#online">Online</a></li>
+            <li><a href="#contact">Contact Us</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-title">Surgeries & Procedures</h4>
+          <h4 class="footer-title">Top Specialties</h4>
           <ul class="footer-links">
+            <li><a href="#surgeryCosts">Cancer Treatment</a></li>
+            <li><a href="#surgeryCosts">Heart Care (CABG)</a></li>
             <li><a href="#surgeryCosts">Knee Replacement</a></li>
-            <li><a href="#surgeryCosts">Cataract Surgery</a></li>
-            <li><a href="#surgeryCosts">Heart Bypass (CABG)</a></li>
-            <li><a href="#surgeryCosts">Kidney Stone Laser</a></li>
-            <li><a href="#surgeryCosts">IVF Treatment</a></li>
-            <li><a href="#surgeryCosts">Spine Surgery</a></li>
+            <li><a href="#surgeryCosts">Kidney Laser Stone</a></li>
+            <li><a href="#surgeryCosts">IVF Infertility</a></li>
+            <li><a href="#surgeryCosts">Robotic Surgery</a></li>
           </ul>
         </div>
 

@@ -1,6 +1,6 @@
 /**
  * Upachar.org Main Application Logic
- * Treatment & Surgery Cost Comparison, Online Appointments, Home Sample Collection & WhatsApp Dispatcher
+ * Universal Search, 9-Item Nav Dropdowns, Doctor & Hospital Directories & WhatsApp Dispatcher
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function initApp() {
     setupLanguageSwitcher();
     setupMobileMenu();
+    setupUniversalSearch();
+    renderDoctorsSection();
+    renderHospitalsSection();
     renderSurgeryCostSection();
     renderServices(activeTab);
     renderSampleCollectionSection();
@@ -33,6 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.classList.add('active');
 
         applyTranslations();
+        renderDoctorsSection();
+        renderHospitalsSection();
         renderSurgeryCostSection();
         renderServices(activeTab);
         renderSampleCollectionSection();
@@ -80,7 +85,171 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // SURGERY & TREATMENT COST COMPARISON SECTION LOGIC
+  // UNIVERSAL HERO SEARCH WIDGET (Inspired by Peace Medical Tourism / VivaVel / MyMedTrip)
+  function setupUniversalSearch() {
+    const searchInput = document.getElementById('universalSearchInput');
+    const searchCategory = document.getElementById('universalSearchCategory');
+    const searchBtn = document.getElementById('universalSearchBtn');
+
+    function performSearch() {
+      const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+      const cat = searchCategory ? searchCategory.value : 'all';
+
+      if (!query && cat === 'all') {
+        window.location.hash = '#treatments';
+        return;
+      }
+
+      // Check if user is searching for doctors, hospitals or treatments
+      if (cat === 'doctors' || query.includes('doc') || query.includes('dr')) {
+        const docSection = document.getElementById('doctors');
+        if (docSection) docSection.scrollIntoView({ behavior: 'smooth' });
+        const docInput = document.getElementById('doctorSearchInput');
+        if (docInput) { docInput.value = query; docInput.dispatchEvent(new Event('input')); }
+      } else if (cat === 'hospitals' || query.includes('hospital') || query.includes('apollo') || query.includes('fortis')) {
+        const hospSection = document.getElementById('hospitals');
+        if (hospSection) hospSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        const surgSection = document.getElementById('surgeryCosts');
+        if (surgSection) surgSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    if (searchBtn) searchBtn.onclick = performSearch;
+    if (searchInput) {
+      searchInput.onkeypress = (e) => {
+        if (e.key === 'Enter') performSearch();
+      };
+    }
+  }
+
+  // RENDER DOCTORS DIRECTORY WITH FILTERS
+  function renderDoctorsSection() {
+    const container = document.getElementById('doctorsGrid');
+    const countrySelect = document.getElementById('doctorCountryFilter');
+    const deptSelect = document.getElementById('doctorDeptFilter');
+    const nameInput = document.getElementById('doctorSearchInput');
+
+    if (!container) return;
+
+    // Populate Department Filter Dropdown dynamically
+    if (deptSelect && deptSelect.options.length <= 1) {
+      const depts = [...new Set(UPACHAR_DATA.doctorsDatabase.map(d => d.dept))];
+      depts.forEach(dept => {
+        const opt = document.createElement('option');
+        opt.value = dept;
+        opt.textContent = dept;
+        deptSelect.appendChild(opt);
+      });
+    }
+
+    function filterAndRenderDoctors() {
+      const countryVal = countrySelect ? countrySelect.value : 'all';
+      const deptVal = deptSelect ? deptSelect.value : 'all';
+      const query = (nameInput ? nameInput.value : '').toLowerCase();
+
+      const filtered = UPACHAR_DATA.doctorsDatabase.filter(d => {
+        const matchCountry = countryVal === 'all' || d.country.toLowerCase() === countryVal.toLowerCase();
+        const matchDept = deptVal === 'all' || d.dept.toLowerCase() === deptVal.toLowerCase();
+        const matchName = !query || d.name.toLowerCase().includes(query) || d.title.toLowerCase().includes(query) || d.hospital.toLowerCase().includes(query);
+        return matchCountry && matchDept && matchName;
+      });
+
+      container.innerHTML = '';
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column:1/-1; text-align:center; padding:3rem; color:var(--text-muted);">
+            <i class="fas fa-user-md" style="font-size:3rem; margin-bottom:1rem; color:var(--accent);"></i>
+            <h3>No Doctors Found Matching Your Filters</h3>
+            <p>Try resetting filters or searching with another keyword.</p>
+          </div>
+        `;
+        return;
+      }
+
+      filtered.forEach(doc => {
+        const card = document.createElement('div');
+        card.className = 'doctor-card';
+        card.innerHTML = `
+          <div class="doc-img-wrap">
+            <img src="${doc.photo}" alt="${doc.name}">
+          </div>
+          <div class="doc-info">
+            <h3 class="doc-name">${doc.name}</h3>
+            <div class="doc-title">${doc.title}</div>
+            <div class="doc-meta">
+              <span><i class="fas fa-award" style="color:var(--amber);"></i> ${doc.experience}</span>
+              <span><i class="fas fa-building" style="color:var(--accent);"></i> ${doc.hospital}</span>
+            </div>
+            <p class="doc-bio">${doc.bio}</p>
+            <div style="display:flex; gap:0.5rem; margin-top:auto; padding-top:1rem;">
+              <button class="btn btn-primary btn-sm book-consult-btn" data-doc="${doc.name}" data-hosp="${doc.hospital}">
+                <i class="fab fa-whatsapp"></i> Book Consultation
+              </button>
+              <button class="btn btn-outline btn-sm view-doc-btn" data-doc="${doc.name}">
+                View Details →
+              </button>
+            </div>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+
+      document.querySelectorAll('.book-consult-btn').forEach(btn => {
+        btn.onclick = () => {
+          openBookingModal('doctor', `Consultation Request with: ${btn.dataset.doc} at ${btn.dataset.hosp}`);
+        };
+      });
+    }
+
+    if (countrySelect) countrySelect.onchange = filterAndRenderDoctors;
+    if (deptSelect) deptSelect.onchange = filterAndRenderDoctors;
+    if (nameInput) nameInput.oninput = filterAndRenderDoctors;
+
+    filterAndRenderDoctors();
+  }
+
+  // RENDER HOSPITALS DIRECTORY
+  function renderHospitalsSection() {
+    const container = document.getElementById('hospitalsGrid');
+    if (!container) return;
+
+    container.innerHTML = '';
+    UPACHAR_DATA.hospitalsDatabase.forEach(h => {
+      const card = document.createElement('div');
+      card.className = 'hospital-card';
+      card.innerHTML = `
+        <div class="hosp-img-wrap">
+          <img src="${h.photo}" alt="${h.name}">
+          <span class="hosp-badge">${h.badge}</span>
+        </div>
+        <div class="hosp-content">
+          <h3 class="hosp-name">${h.name}</h3>
+          <div class="hosp-location"><i class="fas fa-map-marker-alt" style="color:var(--rose);"></i> ${h.location} • <strong>${h.beds}</strong></div>
+          <div class="hosp-specs">
+            ${h.specialties.map(s => `<span class="spec-tag">${s}</span>`).join('')}
+          </div>
+          <div style="display:flex; gap:0.5rem; margin-top:1.25rem;">
+            <button class="btn btn-navy btn-sm hosp-inquiry-btn" data-hosp="${h.name}" data-loc="${h.location}" style="width:100%;">
+              <i class="fab fa-whatsapp"></i> Inquire Hospital Package
+            </button>
+          </div>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+
+    document.querySelectorAll('.hosp-inquiry-btn').forEach(btn => {
+      btn.onclick = () => {
+        openQuoteModal('', btn.dataset.hosp, btn.dataset.loc);
+      };
+    });
+  }
+
+  // RENDER SURGERY & TREATMENT COST SECTION
   function renderSurgeryCostSection() {
     const tableBody = document.getElementById('surgeryTableBody');
     const selectTreatment = document.getElementById('surgeryTreatmentSelect');
@@ -89,7 +258,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!tableBody) return;
 
-    // Populate Treatment Dropdown dynamically if empty
     if (selectTreatment && selectTreatment.options.length <= 1) {
       const uniqueTreatments = [...new Set(UPACHAR_DATA.surgeryDatabase.map(s => s.treatmentEn))];
       uniqueTreatments.forEach(t => {
@@ -155,14 +323,9 @@ document.addEventListener('DOMContentLoaded', () => {
         tableBody.appendChild(row);
       });
 
-      // Attach click events
       document.querySelectorAll('.quote-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-          const tName = btn.dataset.treatment;
-          const hName = btn.dataset.hospital;
-          const cName = btn.dataset.city;
-
-          openQuoteModal(tName, hName, cName);
+          openQuoteModal(btn.dataset.treatment, btn.dataset.hospital, btn.dataset.city);
         });
       });
     }
@@ -174,7 +337,6 @@ document.addEventListener('DOMContentLoaded', () => {
     filterAndRenderSurgeries();
   }
 
-  // Open Quote Request Modal / Scroll to Form
   function openQuoteModal(treatment = '', hospital = '', city = '') {
     const reqTreatment = document.getElementById('quoteTreatment');
     const prefHospital = document.getElementById('quoteHospital');
@@ -409,25 +571,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // 2. Online Appointment Form Handler
-    const appointmentForm = document.getElementById('onlineAppointmentForm');
-    if (appointmentForm) {
-      appointmentForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const service = document.getElementById('appService').value;
-        const name = document.getElementById('appName').value;
-        const phone = document.getElementById('appPhone').value;
-        const country = document.getElementById('appCountry').value;
-        const address = document.getElementById('appAddress').value;
-        const date = document.getElementById('appDate').value;
-        const slot = document.getElementById('appSlot').value;
-        const notes = document.getElementById('appNotes').value;
-
-        sendWhatsAppBooking(service, name, phone, address, `Country: ${country} | Date: ${date} (${slot}) | Notes: ${notes}`, country);
-      });
-    }
-
-    // 3. Modal Booking Form Handler
+    // 2. Modal Booking Form Handler
     const modalForm = document.getElementById('modalBookingForm');
     if (modalForm) {
       modalForm.addEventListener('submit', (e) => {
