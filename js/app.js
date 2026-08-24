@@ -117,6 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       toggleBtn.onclick = handleToggle;
+      toggleBtn.ontouchstart = handleToggle;
 
       // Close menu when clicking outside
       document.addEventListener('click', (e) => {
