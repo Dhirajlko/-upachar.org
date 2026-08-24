@@ -88,21 +88,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Mobile Menu Toggle
+  // Mobile Menu Toggle & Submenu Handler
   function setupMobileMenu() {
     const toggleBtn = document.querySelector('.mobile-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
     if (toggleBtn && navMenu) {
-      toggleBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
+      function openCloseMenu(e) {
+        if (e) {
+          e.stopPropagation();
+          e.preventDefault();
+        }
         navMenu.classList.toggle('active');
         const icon = toggleBtn.querySelector('i');
         if (icon) {
           icon.classList.toggle('fa-bars');
           icon.classList.toggle('fa-times');
         }
-      });
+      }
+
+      toggleBtn.addEventListener('click', openCloseMenu);
+      toggleBtn.addEventListener('touchstart', openCloseMenu, { passive: false });
 
       // Close menu when clicking outside
       document.addEventListener('click', (e) => {
@@ -116,15 +122,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      navMenu.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-          navMenu.classList.remove('active');
-          const icon = toggleBtn.querySelector('i');
-          if (icon) {
-            icon.classList.add('fa-bars');
-            icon.classList.remove('fa-times');
-          }
-        });
+      // Mobile dropdown accordion handling
+      navMenu.querySelectorAll('.nav-item').forEach(item => {
+        const link = item.querySelector('.nav-link');
+        const dropdown = item.querySelector('.dropdown-menu');
+        if (link && dropdown) {
+          link.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1200) {
+              const isDisplayed = window.getComputedStyle(dropdown).display !== 'none';
+              if (!isDisplayed) {
+                e.preventDefault();
+                dropdown.style.display = 'block';
+              }
+            }
+          });
+        }
       });
     }
   }
