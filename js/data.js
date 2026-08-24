@@ -14,7 +14,7 @@ const UPACHAR_DATA = {
 
   contact: {
     tagline: "UPACHAR — Healthcare Made Simple",
-    email: "service@leocompters.co.in",
+    email: "upachar.org@gmail.com",
     phoneAdmin: "+91 8429930881",
     phoneNepal: "+977 9848094547",
     phoneIndia: "+91 7459977911",
