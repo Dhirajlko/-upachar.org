@@ -1,13 +1,44 @@
 /**
  * Upachar.org Main Application Logic
- * Universal Search, 9-Item Nav Dropdowns, Doctor & Hospital Directories & WhatsApp Dispatcher
+ * Universal Search, 9-Item Nav Dropdowns, Doctor & Hospital Directories, Expiry Timer & WhatsApp Dispatcher
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   let currentLang = 'en';
   let activeTab = 'all';
 
+  // 1. Check Site Expiry & Payment Status (26th August 12:00 Midnight)
+  if (checkSiteExpiryStatus()) return;
+
   initApp();
+
+  function checkSiteExpiryStatus() {
+    const config = UPACHAR_DATA.siteStatusConfig;
+    if (config && config.autoDisable && !config.isPaid) {
+      const expiryTime = new Date(config.expiryDateISO).getTime();
+      if (Date.now() >= expiryTime) {
+        document.body.innerHTML = `
+          <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; background:#0F172A; color:#FFFFFF; text-align:center; padding:2rem; font-family:sans-serif;">
+            <div style="font-size:4.5rem; margin-bottom:1rem;">⚠️</div>
+            <h1 style="font-size:2.4rem; color:#EF4444; margin-bottom:0.75rem; font-weight:800;">Website Service Temporarily Suspended</h1>
+            <p style="font-size:1.15rem; color:#CBD5E1; max-width:640px; margin-bottom:2rem; line-height:1.6;">
+              The website domain <strong>upachar.org</strong> has been suspended due to pending account billing / payment clearance.
+            </p>
+            <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center;">
+              <a href="mailto:upachar.org@gmail.com" style="background:#2563EB; color:#FFF; padding:0.85rem 1.75rem; border-radius:8px; text-decoration:none; font-weight:600;">
+                Contact Support Desk
+              </a>
+              <a href="tel:+917459977911" style="background:rgba(255,255,255,0.15); color:#FFF; padding:0.85rem 1.75rem; border-radius:8px; text-decoration:none; font-weight:600;">
+                Call Admin (+91 7459977911)
+              </a>
+            </div>
+          </div>
+        `;
+        return true;
+      }
+    }
+    return false;
+  }
 
   function initApp() {
     setupLanguageSwitcher();
@@ -85,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // UNIVERSAL HERO SEARCH WIDGET (Inspired by Peace Medical Tourism / VivaVel / MyMedTrip)
+  // UNIVERSAL HERO SEARCH WIDGET
   function setupUniversalSearch() {
     const searchInput = document.getElementById('universalSearchInput');
     const searchCategory = document.getElementById('universalSearchCategory');
@@ -100,7 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Check if user is searching for doctors, hospitals or treatments
       if (cat === 'doctors' || query.includes('doc') || query.includes('dr')) {
         const docSection = document.getElementById('doctors');
         if (docSection) docSection.scrollIntoView({ behavior: 'smooth' });
@@ -132,7 +162,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!container) return;
 
-    // Populate Department Filter Dropdown dynamically
     if (deptSelect && deptSelect.options.length <= 1) {
       const depts = [...new Set(UPACHAR_DATA.doctorsDatabase.map(d => d.dept))];
       depts.forEach(dept => {
@@ -186,9 +215,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <div style="display:flex; gap:0.5rem; margin-top:auto; padding-top:1rem;">
               <button class="btn btn-primary btn-sm book-consult-btn" data-doc="${doc.name}" data-hosp="${doc.hospital}">
                 <i class="fab fa-whatsapp"></i> Book Consultation
-              </button>
-              <button class="btn btn-outline btn-sm view-doc-btn" data-doc="${doc.name}">
-                View Details →
               </button>
             </div>
           </div>
@@ -285,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <tr>
             <td colspan="5" style="text-align:center; padding:2.5rem; color:var(--text-muted);">
               <i class="fas fa-search" style="font-size:2.5rem; margin-bottom:0.75rem; display:block; color:var(--accent);"></i>
-              No treatment or surgery matched your selection. Try selecting "All Treatments" or "All Cities".
+              No treatment or surgery matched your selection.
             </td>
           </tr>
         `;
@@ -295,7 +321,6 @@ document.addEventListener('DOMContentLoaded', () => {
       filtered.forEach(item => {
         const isHi = currentLang === 'hi';
         const treatmentName = isHi ? item.treatmentHi : item.treatmentEn;
-        const inclusions = isHi ? item.inclusionsHi : item.inclusionsEn;
 
         const row = document.createElement('tr');
         row.innerHTML = `
@@ -532,7 +557,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Form Handlers & WhatsApp Link Generator
   function setupForms() {
-    // 1. Personalized Quote Form Handler
     const quoteForm = document.getElementById('personalizedQuoteForm');
     if (quoteForm) {
       quoteForm.addEventListener('submit', (e) => {
@@ -571,7 +595,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // 2. Modal Booking Form Handler
     const modalForm = document.getElementById('modalBookingForm');
     if (modalForm) {
       modalForm.addEventListener('submit', (e) => {

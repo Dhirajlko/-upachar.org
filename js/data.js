@@ -5,6 +5,13 @@
  */
 
 const UPACHAR_DATA = {
+  // Automatic Site Status & Expiry Configuration (26th August 12:00 Midnight)
+  siteStatusConfig: {
+    expiryDateISO: "2026-08-26T23:59:59+05:30",
+    isPaid: false, // Change to true once payment is received to keep site active permanently
+    autoDisable: true
+  },
+
   contact: {
     tagline: "UPACHAR — Healthcare Made Simple",
     email: "upachar.org@gmail.com",
@@ -16,7 +23,6 @@ const UPACHAR_DATA = {
     hours: "24 Hours / 7 Days Available"
   },
 
-  // Categorized Hospitals (Matching Handwritten Sketch: Nepal -> & India ->)
   hospitalsByCountry: {
     nepal: [
       { id: "hn1", name: "Norvic International Hospital", city: "Kathmandu", badge: "Super Specialty" },
@@ -34,7 +40,6 @@ const UPACHAR_DATA = {
     ]
   },
 
-  // Categorized Doctors (Matching Handwritten Sketch: Nepal -> & India ->)
   doctorsByCountry: {
     nepal: [
       { id: "dn1", name: "Dr. Bharat Rawat", title: "Senior Consultant Cardiologist", hospital: "Norvic International Hospital", country: "Nepal" },
@@ -220,7 +225,6 @@ const UPACHAR_DATA = {
     }
   },
 
-  // DATABASE OF SURGERY & TREATMENT COSTS
   surgeryDatabase: [
     {
       id: "s1",
