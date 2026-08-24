@@ -604,8 +604,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const phone = document.getElementById('modalPhone').value;
         const country = document.getElementById('modalCountry') ? document.getElementById('modalCountry').value : 'India';
         const address = document.getElementById('modalAddress').value;
-        const dateTime = document.getElementById('modalDateTime').value;
-        const notes = document.getElementById('modalNotes').value;
+        const dateTimeEl = document.getElementById('modalDateTime');
+        const dateTime = dateTimeEl ? dateTimeEl.value : '';
+        const notes = document.getElementById('modalNotes') ? document.getElementById('modalNotes').value : '';
 
         const serviceObj = UPACHAR_DATA.services.find(s => s.id === serviceId);
         const serviceName = serviceObj ? serviceObj.titleEn : serviceId;
