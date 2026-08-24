@@ -1025,10 +1025,11 @@ p, h1, h2, h3, h4, h5, h6, span, a, label {
 
 /* MOBILE COMPATIBILITY & STRICT OVERFLOW PREVENTION */
 @media (max-width: 1200px) {
-  .nav-menu {
+  body .nav-menu {
     position: fixed !important;
     top: 0 !important;
     left: -100% !important;
+    transform: translateX(-100%) !important;
     width: 280px !important;
     max-width: 80vw !important;
     height: 100vh !important;
@@ -1037,15 +1038,16 @@ p, h1, h2, h3, h4, h5, h6, span, a, label {
     align-items: flex-start !important;
     padding: 5rem 1.5rem 1.5rem !important;
     box-shadow: 0 10px 30px rgba(0,0,0,0.4) !important;
-    transition: left 0.3s ease-in-out !important;
+    transition: transform 0.3s ease-in-out, left 0.3s ease-in-out !important;
     overflow-y: auto !important;
     z-index: 10050 !important;
     display: flex !important;
     visibility: visible !important;
   }
 
-  .nav-menu.active {
+  body .nav-menu.active {
     left: 0 !important;
+    transform: translateX(0) !important;
   }
 
   .nav-item {

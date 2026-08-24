@@ -97,7 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
       let isToggling = false;
 
       function handleToggle(e) {
-        if (e) e.stopPropagation();
+        if (e) {
+          e.stopPropagation();
+          e.preventDefault();
+        }
         if (isToggling) return;
         isToggling = true;
         setTimeout(() => { isToggling = false; }, 300);
@@ -106,16 +109,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const icon = toggleBtn.querySelector('i');
         if (icon) {
           if (navMenu.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
+            icon.className = 'fas fa-times';
           } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
+            icon.className = 'fas fa-bars';
           }
         }
       }
 
-      toggleBtn.addEventListener('click', handleToggle);
+      toggleBtn.onclick = handleToggle;
 
       // Close menu when clicking outside
       document.addEventListener('click', (e) => {
@@ -123,8 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
           navMenu.classList.remove('active');
           const icon = toggleBtn.querySelector('i');
           if (icon) {
-            icon.classList.add('fa-bars');
-            icon.classList.remove('fa-times');
+            icon.className = 'fas fa-bars';
           }
         }
       });
