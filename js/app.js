@@ -101,12 +101,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const navMenu = document.querySelector('.nav-menu');
 
     if (toggleBtn && navMenu) {
-      toggleBtn.addEventListener('click', () => {
+      toggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         navMenu.classList.toggle('active');
         const icon = toggleBtn.querySelector('i');
         if (icon) {
           icon.classList.toggle('fa-bars');
           icon.classList.toggle('fa-times');
+        }
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+          navMenu.classList.remove('active');
+          const icon = toggleBtn.querySelector('i');
+          if (icon) {
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-times');
+          }
         }
       });
 
