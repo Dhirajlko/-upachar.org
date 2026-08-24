@@ -1,6 +1,6 @@
 /* ==========================================================================
    Upachar.org - Medical Tourism & Home Healthcare Stylesheet
-   Strict Anti-Overflow (Position Absolute Marquee - 100% Zero Right Blank Space)
+   Strict Anti-Overflow (Zero Right Scroll / Dark Canvas Background Fallback)
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
@@ -40,7 +40,7 @@
   --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Bulletproof Global Reset - Prevents Android Chrome Document Expansion */
+/* Bulletproof Anti-Overflow & Dark Canvas Reset */
 *, *::before, *::after {
   box-sizing: border-box !important;
   margin: 0;
@@ -52,6 +52,7 @@ html {
   width: 100% !important;
   max-width: 100vw !important;
   overflow-x: hidden !important;
+  background-color: #0F172A !important; /* Dark canvas background so no white gap ever shows */
 }
 
 body {
@@ -64,6 +65,7 @@ body {
   color: var(--text-dark);
   line-height: 1.6;
   touch-action: pan-y !important;
+  overscroll-behavior: none !important;
   overscroll-behavior-x: none !important;
   -webkit-font-smoothing: antialiased;
 }
@@ -104,7 +106,7 @@ p, h1, h2, h3, h4, h5, h6, span, a, label {
   box-sizing: border-box;
 }
 
-/* RUNNING NOTICE TICKER BANNER (Absolute Position Marquee - 100% Out of Flow, No Document Overflow) */
+/* RUNNING NOTICE TICKER BANNER (Absolute Position Marquee - 100% Out of Flow) */
 .ticker-bar {
   background: linear-gradient(90deg, #131B3F 0%, #1E295B 40%, #2563EB 80%, #131B3F 100%);
   color: #FFFFFF;
