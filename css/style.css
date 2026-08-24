@@ -182,16 +182,18 @@ p, h1, h2, h3, h4, h5, h6, span, a, label {
 }
 
 .ticker-item {
-  display: inline-flex;
-  align-items: center;
+  display: inline-flex !important;
+  align-items: center !important;
   gap: 1.5rem;
   color: #F8FAFC;
+  white-space: nowrap !important;
 }
 
 .ticker-item span {
-  display: inline-flex;
-  align-items: center;
+  display: inline-flex !important;
+  align-items: center !important;
   gap: 0.4rem;
+  white-space: nowrap !important;
 }
 
 /* Top Utility Bar */
@@ -1107,7 +1109,8 @@ p, h1, h2, h3, h4, h5, h6, span, a, label {
   }
 
   .nav-cta-group {
-    display: flex !align-items: center;
+    display: flex !important;
+    align-items: center !important;
     gap: 0.5rem;
     flex-shrink: 0;
   }
@@ -1118,13 +1121,16 @@ p, h1, h2, h3, h4, h5, h6, span, a, label {
   }
 }
 
-@media (max-width: 768px) {
-  .nav-cta-group .btn-primary {
-    padding: 0.5rem 0.75rem !important;
-  }
-  .nav-cta-group .btn-primary span {
+@media (max-width: 900px) {
+  .brand-tagline {
     display: none !important;
   }
+  .nav-cta-group .btn-primary {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
   .top-bar .container {
     flex-direction: column;
     align-items: flex-start;
