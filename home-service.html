@@ -3,12 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Healthcare Service at Home — UPACHAR | Sample Collection, Doctor Visit & ICU Setup</title>
+  <title>Home Service — UPACHAR | Healthcare & Nursing at Your Doorstep</title>
   <meta name="description" content="Doorstep healthcare services across India & Nepal: Home blood sample collection, Doctor home visits, Nursing care, Medical equipment rental & Home ICU Bed setup.">
   
   <link rel="icon" href="assets/images/logo.jpeg" type="image/jpeg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .hs-card {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-md);
+      padding: 2rem;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .hs-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent);
+    }
+    .hs-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .filter-btn {
+      padding: 0.6rem 1.25rem;
+      border-radius: var(--radius-full);
+      border: 1.5px solid var(--border-light);
+      background: #FFF;
+      color: var(--text-dark);
+      font-weight: 700;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--accent);
+      color: #FFF;
+      border-color: var(--accent);
+    }
+    .package-card {
+      background: #FFF;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .package-card:hover {
+      border-color: var(--cyan);
+      box-shadow: var(--shadow-md);
+    }
+    .price-tag {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin: 0.5rem 0 1rem;
+    }
+  </style>
 </head>
 <body>
 
@@ -76,28 +147,241 @@
   </header>
 
   <!-- Page Banner -->
-  <section class="hero-section" style="padding:3rem 0; text-align:center;">
+  <section class="hero-section" style="padding:3.5rem 0; text-align:center;">
     <div class="container">
-      <span class="hero-badge"><i class="fas fa-home"></i> HEALTHCARE AT HOME</span>
-      <h1 class="hero-title" style="font-size:2.25rem;">Doorstep Medical Services</h1>
-      <p class="hero-subtitle" style="margin:0 auto; max-width:750px;">
-        Sample Collection, Doctor Visits, Nursing, Medical Equipment Rentals & ICU Setup right in the comfort of your home.
+      <span class="hero-badge"><i class="fas fa-home"></i> HEALTHCARE AT YOUR DOORSTEP</span>
+      <h1 class="hero-title" style="font-size:2.4rem;">Professional Home Medical Services</h1>
+      <p class="hero-subtitle" style="margin:0 auto; max-width:780px;">
+        Sample Collection, Doctor Visits, Nursing Care, Medical Equipment Rentals & Turnkey ICU Setup delivered at your home across India & Nepal.
       </p>
     </div>
   </section>
 
-  <!-- Home Sample Collection -->
-  <section id="sampleCollection" class="section">
+  <!-- Main Home Services Catalog -->
+  <section class="section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Pathology at Doorstep</span>
-        <h2 class="section-title">Home Blood & Lab Sample Collection</h2>
-        <p class="section-desc">Certified phlebotomists collect samples using sterile single-use kits.</p>
+      <!-- Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All Home Services</button>
+        <button class="filter-btn" data-filter="sample">Sample Collection</button>
+        <button class="filter-btn" data-filter="doctor">Doctor Visit @ Home</button>
+        <button class="filter-btn" data-filter="nurse">Nursing Care</button>
+        <button class="filter-btn" data-filter="icu">ICU & Equipment</button>
       </div>
 
-      <div id="sampleTestsGrid" class="packages-grid"></div>
+      <!-- Services Grid -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:2rem;">
+        
+        <!-- 1. Sample Collection -->
+        <div class="hs-card" data-category="sample">
+          <div class="hs-icon" style="background:#D1FAE5; color:#059669;"><i class="fas fa-vials"></i></div>
+          <h3 style="font-size:1.3rem; color:var(--primary); margin-bottom:0.5rem;">Home Blood & Lab Sample Collection</h3>
+          <p style="color:var(--text-muted); font-size:0.925rem; margin-bottom:1.25rem;">
+            Certified phlebotomists collect blood & urine samples right at your doorstep. 100% sterile single-use kits with digital report delivery within 24 hours.
+          </p>
+          <ul style="font-size:0.85rem; color:var(--text-dark); margin-bottom:1.5rem; line-height:1.8;">
+            <li><i class="fas fa-check-circle" style="color:var(--emerald);"></i> Full Body Checkup Packages</li>
+            <li><i class="fas fa-check-circle" style="color:var(--emerald);"></i> Diabetes, Thyroid & Kidney Panels</li>
+            <li><i class="fas fa-check-circle" style="color:var(--emerald);"></i> Sterile Sealed Single-Use Vacutainers</li>
+          </ul>
+          <button class="btn btn-primary" onclick="openBookingModal('diagnostics', 'Home Lab Sample Collection')" style="margin-top:auto;">
+            <i class="fab fa-whatsapp"></i> Book Sample Collection
+          </button>
+        </div>
+
+        <!-- 2. Doctor Visit @ Home -->
+        <div class="hs-card" data-category="doctor">
+          <div class="hs-icon" style="background:#FEF3C7; color:#D97706;"><i class="fas fa-user-md"></i></div>
+          <h3 style="font-size:1.3rem; color:var(--primary); margin-bottom:0.5rem;">Doctor Visit at Home</h3>
+          <p style="color:var(--text-muted); font-size:0.925rem; margin-bottom:1.25rem;">
+            Qualified MBBS/MD General Physicians visit elderly or immobile patients for in-person health examination, diagnosis, and prescription.
+          </p>
+          <ul style="font-size:0.85rem; color:var(--text-dark); margin-bottom:1.5rem; line-height:1.8;">
+            <li><i class="fas fa-check-circle" style="color:var(--emerald);"></i> General Physician Home Examination</li>
+            <li><i class="fas fa-check-circle" style="color:var(--emerald);"></i> Elderly & Bedridden Patient Care</li>
+            <li><i class="fas fa-check-circle" style="color:var(--emerald);"></i> Post-Operative Followup Checkup</li>
+          </ul>
+          <button class="btn btn-primary" onclick="openBookingModal('doctor', 'Doctor Visit @ Home')" style="margin-top:auto;">
+            <i class="fab fa-whatsapp"></i> Request Doctor Home Visit
+          </button>
+        </div>
+
+        <!-- 3. Nurse Care @ Home -->
+        <div class="hs-card" data-category="nurse">
+          <div class="hs-icon" style="background:#F3E8FF; color:#9333EA;"><i class="fas fa-user-nurse"></i></div>
+          <h3 style="font-size:1.3rem; color:var(--primary); margin-bottom:0.5rem;">Nursing Care at Home</h3>
+          <p style="color:var(--text-muted); font-size:0.925rem; margin-bottom:1.25rem;">
+            Certified GNM/B.Sc nurses for short procedure visits or 12/24-hour shift care. Skilled in IV administration, catheterization, and dressing.
+          </p>
+          <ul style="font-size:0.85rem; color:var(--text-dark); margin-bottom:1.5rem; line-height:1.8;">
+            <li><i class="fas fa-check-circle" style="color:var(--emerald);"></i> Surgical Wound Dressing & Stitches Removal</li>
+            <li><i class="fas fa-check-circle" style="color:var(--emerald);"></i> IV Infusions, Injections & Ryle's Tube Care</li>
+            <li><i class="fas fa-check-circle" style="color:var(--emerald);"></i> 12/24 Hours Dedicated Nurse Shift</li>
+          </ul>
+          <button class="btn btn-primary" onclick="openBookingModal('nursing', 'Nurse Care @ Home')" style="margin-top:auto;">
+            <i class="fab fa-whatsapp"></i> Hire Home Nurse
+          </button>
+        </div>
+
+        <!-- 4. Home ICU Setup -->
+        <div class="hs-card" data-category="icu">
+          <div class="hs-icon" style="background:#E0E7FF; color:#4F46E5;"><i class="fas fa-procedures"></i></div>
+          <h3 style="font-size:1.3rem; color:var(--primary); margin-bottom:0.5rem;">Turnkey Home ICU Setup</h3>
+          <p style="color:var(--text-muted); font-size:0.925rem; margin-bottom:1.25rem;">
+            Transform a bedroom into a hospital-grade ICU. Includes Electric ICU Beds, Ventilator, Multipara Monitor, Oxygen & Critical Care Nurse.
+          </p>
+          <ul style="font-size:0.85rem; color:var(--text-dark); margin-bottom:1.5rem; line-height:1.8;">
+            <li><i class="fas fa-check-circle" style="color:var(--emerald);"></i> Electric 3/5 Function ICU Hospital Bed</li>
+            <li><i class="fas fa-check-circle" style="color:var(--emerald);"></i> ICU Ventilator & Multipara Monitor</li>
+            <li><i class="fas fa-check-circle" style="color:var(--emerald);"></i> 24/7 ICU Trained Nurse & Medical Backup</li>
+          </ul>
+          <button class="btn btn-primary" onclick="openBookingModal('equipment', 'Turnkey Home ICU Setup')" style="margin-top:auto;">
+            <i class="fab fa-whatsapp"></i> Inquire Home ICU Setup
+          </button>
+        </div>
+
+        <!-- 5. Medical Equipment Rental -->
+        <div class="hs-card" data-category="icu">
+          <div class="hs-icon" style="background:#E0F2FE; color:#0284C7;"><i class="fas fa-wheelchair"></i></div>
+          <h3 style="font-size:1.3rem; color:var(--primary); margin-bottom:0.5rem;">Medical Equipment Rental & Sales</h3>
+          <p style="color:var(--text-muted); font-size:0.925rem; margin-bottom:1.25rem;">
+            Affordable daily and monthly rentals for Oxygen Concentrators (5L/10L), BiPAP/CPAP machines, Wheelchairs, Suction Pumps & Air Mattresses.
+          </p>
+          <ul style="font-size:0.85rem; color:var(--text-dark); margin-bottom:1.5rem; line-height:1.8;">
+            <li><i class="fas fa-check-circle" style="color:var(--emerald);"></i> Oxygen Concentrator (5L / 10L) Daily/Monthly</li>
+            <li><i class="fas fa-check-circle" style="color:var(--emerald);"></i> BiPAP / CPAP Machine for Sleep Apnea</li>
+            <li><i class="fas fa-check-circle" style="color:var(--emerald);"></i> Manual & Motorized Wheelchairs</li>
+          </ul>
+          <button class="btn btn-primary" onclick="openBookingModal('equipment', 'Medical Equipment Rental')" style="margin-top:auto;">
+            <i class="fab fa-whatsapp"></i> Rent Medical Equipment
+          </button>
+        </div>
+
+      </div>
     </div>
   </section>
+
+  <!-- Popular Health Checkup Packages Section -->
+  <section class="section" style="background:var(--bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Popular Pathology Packages</span>
+        <h2 class="section-title">Home Pathology Health Packages</h2>
+        <p class="section-desc">Sample collection right at your home with NABL partner lab reports.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.5rem;">
+        
+        <div class="package-card">
+          <h3 style="font-size:1.15rem; color:var(--primary);">Basic Health Profile</h3>
+          <p style="font-size:0.8rem; color:var(--text-muted);">65 Blood & Urine Parameters</p>
+          <div class="price-tag">₹1,499 / NPR 2,399</div>
+          <ul style="font-size:0.825rem; color:var(--text-dark); margin-bottom:1.25rem; line-height:1.7;">
+            <li>✓ Complete Blood Count (CBC)</li>
+            <li>✓ Fasting Blood Sugar (FBS)</li>
+            <li>✓ Lipid Profile (Cholesterol)</li>
+            <li>✓ Kidney Function Test (KFT)</li>
+          </ul>
+          <button class="btn btn-primary btn-sm" onclick="openBookingModal('diagnostics', 'Basic Health Profile')" style="margin-top:auto;">
+            <i class="fab fa-whatsapp"></i> Book Package
+          </button>
+        </div>
+
+        <div class="package-card" style="border-color:var(--accent);">
+          <div style="background:var(--accent); color:#FFF; font-size:0.7rem; font-weight:800; padding:0.2rem 0.5rem; border-radius:4px; align-self:flex-start; margin-bottom:0.5rem; text-transform:uppercase;">Popular</div>
+          <h3 style="font-size:1.15rem; color:var(--primary);">Executive Full Body Checkup</h3>
+          <p style="font-size:0.8rem; color:var(--text-muted);">92 Comprehensive Parameters</p>
+          <div class="price-tag">₹2,499 / NPR 3,999</div>
+          <ul style="font-size:0.825rem; color:var(--text-dark); margin-bottom:1.25rem; line-height:1.7;">
+            <li>✓ All Basic Profile Tests</li>
+            <li>✓ Liver Function Test (LFT)</li>
+            <li>✓ Thyroid Profile (T3, T4, TSH)</li>
+            <li>✓ Vitamin D3 & Vitamin B12</li>
+          </ul>
+          <button class="btn btn-primary btn-sm" onclick="openBookingModal('diagnostics', 'Executive Full Body Checkup')" style="margin-top:auto;">
+            <i class="fab fa-whatsapp"></i> Book Package
+          </button>
+        </div>
+
+        <div class="package-card">
+          <h3 style="font-size:1.15rem; color:var(--primary);">Diabetes Care Package</h3>
+          <p style="font-size:0.8rem; color:var(--text-muted);">HbA1c & Kidney Screening</p>
+          <div class="price-tag">₹999 / NPR 1,599</div>
+          <ul style="font-size:0.825rem; color:var(--text-dark); margin-bottom:1.25rem; line-height:1.7;">
+            <li>✓ HbA1c (3 Month Average Sugar)</li>
+            <li>✓ Fasting & PP Blood Glucose</li>
+            <li>✓ Urine Microalbumin</li>
+            <li>✓ Serum Creatinine & BUN</li>
+          </ul>
+          <button class="btn btn-primary btn-sm" onclick="openBookingModal('diagnostics', 'Diabetes Care Package')" style="margin-top:auto;">
+            <i class="fab fa-whatsapp"></i> Book Package
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Booking Dialog -->
+  <div id="bookingModal" class="modal-overlay">
+    <div class="modal-content">
+      <button id="closeModalBtn" class="modal-close"><i class="fas fa-times"></i></button>
+      <div style="margin-bottom:1.5rem;">
+        <h3 style="font-size:1.35rem; color:var(--primary); font-weight:700;">Book Healthcare Consultation</h3>
+        <p style="font-size:0.875rem; color:var(--text-muted);">Fill in details to instantly connect with our medical desk on WhatsApp.</p>
+      </div>
+
+      <form id="modalBookingForm" class="quick-form">
+        <div class="form-group">
+          <label>Select Service / Surgery</label>
+          <select id="modalServiceSelect" class="form-select" required></select>
+        </div>
+
+        <div class="form-group">
+          <label>Select Country / Location</label>
+          <select id="modalCountry" class="form-select" required>
+            <option value="India">India (+91 7459977911)</option>
+            <option value="Nepal">Nepal (+977 9848094547)</option>
+            <option value="Admin">Admin (+91 8429930881)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Patient / Contact Name</label>
+          <input type="text" id="modalName" class="form-input" placeholder="Full Name" required>
+        </div>
+
+        <div class="form-group">
+          <label>Mobile Number (WhatsApp)</label>
+          <input type="tel" id="modalPhone" class="form-input" placeholder="+91 / +977 XXXXXXXXXX" required>
+        </div>
+
+        <div class="form-group">
+          <label>Home Address / Location</label>
+          <input type="text" id="modalAddress" class="form-input" placeholder="House No., Sector, City" required>
+        </div>
+
+        <div class="form-group">
+          <label>Medical Condition / Notes (Optional)</label>
+          <textarea id="modalNotes" class="form-textarea" rows="2" placeholder="Describe requirements..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-whatsapp" style="width:100%; margin-top:0.75rem;">
+          <i class="fab fa-whatsapp"></i> Confirm Booking via WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Floating Action Buttons -->
+  <div class="floating-actions">
+    <a href="https://wa.me/918429930881" target="_blank" class="float-btn float-wa" title="WhatsApp Admin (+91 8429930881)">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+918429930881" class="float-btn float-call" title="Call Admin Hotline">
+      <i class="fas fa-phone-alt"></i>
+    </a>
+  </div>
 
   <!-- Footer -->
   <footer class="main-footer">
@@ -137,5 +421,28 @@
 
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
+  <script>
+    // Home Service Filter Tabs Handler
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.hs-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filter = btn.dataset.filter;
+          cards.forEach(card => {
+            if (filter === 'all' || card.dataset.category === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
 </body>
 </html>
