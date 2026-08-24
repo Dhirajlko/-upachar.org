@@ -21,6 +21,7 @@ const UPACHAR_DATA = {
     whatsappAdmin: "918429930881",
     whatsappNepal: "9779848094547",
     whatsappIndia: "917459977911",
+    handle: "@dambarshahu",
     address: "Upachar Medical Tourism & Home Healthcare Center, Delhi | Lucknow | Kathmandu",
     hours: "24 Hours / 7 Days Available"
   },
