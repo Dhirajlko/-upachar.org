@@ -1,6 +1,6 @@
 /* ==========================================================================
    Upachar.org - Medical Tourism & Home Healthcare Stylesheet
-   Matching Handwritten Wireframe Sketch (Nepal & India Submenus)
+   Matching Handwritten Wireframe Sketch (Nepal & India Submenus) + Running Ticker
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
@@ -86,6 +86,73 @@ button, input, select, textarea {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 1.25rem;
+}
+
+/* RUNNING MESSAGE TICKER BANNER */
+.ticker-bar {
+  background: linear-gradient(90deg, #131B3F 0%, #1E295B 40%, #2563EB 80%, #131B3F 100%);
+  color: #FFFFFF;
+  padding: 0.35rem 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ticker-label {
+  background: #EF4444;
+  color: #FFFFFF;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.725rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  border-radius: 4px;
+  margin-left: 1rem;
+  z-index: 2;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.ticker-wrap {
+  flex-grow: 1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker-content {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marqueeTicker 32s linear infinite;
+}
+
+.ticker-content:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
+@keyframes marqueeTicker {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-100%, 0, 0); }
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: #F8FAFC;
+}
+
+.ticker-item span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 /* Top Utility Bar */
@@ -288,7 +355,7 @@ button, input, select, textarea {
   letter-spacing: 0.5px;
 }
 
-/* Multi-Level Flyout Submenu (Matching Sketch Nepal -> & India ->) */
+/* Multi-Level Flyout Submenu */
 .has-submenu {
   position: relative;
 }
