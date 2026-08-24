@@ -1,6 +1,6 @@
 /* ==========================================================================
    Upachar.org - Medical Tourism & Home Healthcare Stylesheet
-   Matching Handwritten Wireframe Sketch (Nepal & India Submenus) + Running Ticker
+   Matching Handwritten Wireframe Sketch + Running Notice + Mobile Optimized
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
@@ -88,18 +88,18 @@ button, input, select, textarea {
   padding: 0 1.25rem;
 }
 
-/* RUNNING MESSAGE TICKER BANNER */
+/* RUNNING NOTICE TICKER BANNER (Right to Left Smooth Marquee) */
 .ticker-bar {
   background: linear-gradient(90deg, #131B3F 0%, #1E295B 40%, #2563EB 80%, #131B3F 100%);
   color: #FFFFFF;
-  padding: 0.35rem 0;
+  padding: 0.4rem 0;
   font-size: 0.85rem;
   font-weight: 600;
   overflow: hidden;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
 .ticker-label {
@@ -112,12 +112,13 @@ button, input, select, textarea {
   letter-spacing: 0.5px;
   white-space: nowrap;
   border-radius: 4px;
-  margin-left: 1rem;
+  margin-left: 0.75rem;
   z-index: 2;
   box-shadow: 0 2px 4px rgba(0,0,0,0.25);
   display: flex;
   align-items: center;
   gap: 0.3rem;
+  flex-shrink: 0;
 }
 
 .ticker-wrap {
@@ -129,7 +130,7 @@ button, input, select, textarea {
 .ticker-content {
   display: inline-block;
   padding-left: 100%;
-  animation: marqueeTicker 32s linear infinite;
+  animation: marqueeTicker 28s linear infinite;
 }
 
 .ticker-content:hover {
@@ -589,7 +590,7 @@ button, input, select, textarea {
 /* Doctors Directory Cards */
 .doctors-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
 }
 
@@ -660,7 +661,7 @@ button, input, select, textarea {
 /* Hospitals Directory Cards */
 .hospitals-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
 }
 
@@ -923,13 +924,137 @@ button, input, select, textarea {
   text-align: center;
 }
 
-/* Responsive Styles */
+/* MOBILE COMPATIBILITY & RESPONSIVE BREAKPOINTS */
 @media (max-width: 1080px) {
   .nav-menu {
+    position: fixed;
+    top: 84px;
+    left: -100%;
+    width: 300px;
+    height: calc(100vh - 84px);
+    background: #FFFFFF;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    overflow-y: auto;
+    z-index: 1050;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-link {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.85rem 0;
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    padding-left: 1rem;
     display: none;
+    width: 100%;
+  }
+
+  .nav-item:hover .dropdown-menu {
+    display: block;
+  }
+
+  .flyout-submenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    padding-left: 1rem;
+    display: none;
+  }
+
+  .has-submenu:hover .flyout-submenu {
+    display: block;
   }
 
   .mobile-toggle {
     display: block;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-bar .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .top-info {
+    font-size: 0.775rem;
+    gap: 0.75rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-search-box {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+  }
+
+  .search-select, .search-input-field {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .doctors-grid, .hospitals-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ticker-bar {
+    font-size: 0.775rem;
+  }
+  
+  .ticker-label {
+    font-size: 0.675rem;
+    padding: 0.15rem 0.4rem;
+  }
+
+  .hero-title {
+    font-size: 1.7rem;
+  }
+
+  .btn {
+    width: 100%;
   }
 }
