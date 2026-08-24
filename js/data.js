@@ -15,8 +15,10 @@ const UPACHAR_DATA = {
   contact: {
     tagline: "UPACHAR — Healthcare Made Simple",
     email: "upachar.org@gmail.com",
+    phoneAdmin: "+91 8429930881",
     phoneNepal: "+977 9848094547",
     phoneIndia: "+91 7459977911",
+    whatsappAdmin: "918429930881",
     whatsappNepal: "9779848094547",
     whatsappIndia: "917459977911",
     address: "Upachar Medical Tourism & Home Healthcare Center, Delhi | Lucknow | Kathmandu",
