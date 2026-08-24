@@ -1,6 +1,6 @@
 /* ==========================================================================
    Upachar.org - Medical Tourism & Home Healthcare Stylesheet
-   Strict Anti-Overflow (Zero Right Scroll / Dark Canvas Background Fallback)
+   Strict Mobile Responsive (Zero Horizontal Overflow on Smartphones)
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
@@ -52,7 +52,7 @@ html {
   width: 100% !important;
   max-width: 100vw !important;
   overflow-x: hidden !important;
-  background-color: #0F172A !important; /* Dark canvas background so no white gap ever shows */
+  background-color: #0F172A !important;
 }
 
 body {
@@ -106,7 +106,7 @@ p, h1, h2, h3, h4, h5, h6, span, a, label {
   box-sizing: border-box;
 }
 
-/* RUNNING NOTICE TICKER BANNER (Absolute Position Marquee - 100% Out of Flow) */
+/* RUNNING NOTICE TICKER BANNER (Absolute Position Marquee - Out of Flow) */
 .ticker-bar {
   background: linear-gradient(90deg, #131B3F 0%, #1E295B 40%, #2563EB 80%, #131B3F 100%);
   color: #FFFFFF;
@@ -219,6 +219,7 @@ p, h1, h2, h3, h4, h5, h6, span, a, label {
   gap: 0.4rem;
   color: #CBD5E1;
   font-weight: 500;
+  word-break: break-all;
 }
 
 .top-info a:hover {
@@ -631,6 +632,23 @@ p, h1, h2, h3, h4, h5, h6, span, a, label {
   color: var(--text-muted);
 }
 
+/* Form Container Card & Responsive Rows */
+.form-container-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #FFF;
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-md);
+  width: 100%;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
 /* Doctors Directory Cards */
 .doctors-grid {
   display: grid;
@@ -1006,7 +1024,7 @@ p, h1, h2, h3, h4, h5, h6, span, a, label {
     overflow-y: auto;
     z-index: 1050;
     visibility: hidden;
-    display: none; /* Fully unmounted when inactive so Android Chrome canvas never sees it */
+    display: none;
   }
 
   .nav-menu.active {
@@ -1078,14 +1096,16 @@ p, h1, h2, h3, h4, h5, h6, span, a, label {
   .top-info {
     font-size: 0.775rem;
     gap: 0.75rem;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .hero-title {
-    font-size: 1.9rem;
+    font-size: 1.85rem;
   }
 
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.975rem;
   }
 
   .hero-search-box {
@@ -1095,8 +1115,36 @@ p, h1, h2, h3, h4, h5, h6, span, a, label {
   }
 
   .search-select, .search-input-field {
+    width: 100% !important;
+    min-width: unset !important;
+  }
+
+  .hero-quick-ctas {
+    flex-direction: column;
     width: 100%;
-    min-width: unset;
+  }
+
+  .hero-quick-ctas a, .hero-quick-ctas button {
+    width: 100% !important;
+  }
+
+  .form-container-card {
+    padding: 1.25rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem;
+  }
+
+  .cost-search-box {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .cost-search-box select, .cost-search-box input, .cost-search-box button {
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   .doctors-grid, .hospitals-grid {
@@ -1132,7 +1180,7 @@ p, h1, h2, h3, h4, h5, h6, span, a, label {
   }
 
   .hero-title {
-    font-size: 1.6rem;
+    font-size: 1.55rem;
   }
 
   .btn {

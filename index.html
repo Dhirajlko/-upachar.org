@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>UPACHAR — Healthcare Made Simple | Doctors, Hospitals, Treatments & Home Care</title>
   <meta name="description" content="UPACHAR — Healthcare Made Simple. Search top doctors, compare accredited hospitals in India & Nepal, surgery costs, medical packages, online consultations & doorstep home healthcare.">
   <meta name="keywords" content="Find Doctors Nepal India, Compare Hospitals, Surgery Costs, Air Ambulance, Home Nursing, Home ICU Setup, Upachar Healthcare">
@@ -37,7 +37,7 @@
         <a href="tel:+918429930881"><i class="fas fa-phone-alt" style="color:var(--amber);"></i> <span>📞 Admin: +91-8429930881</span></a>
         <a href="tel:+917459977911"><i class="fas fa-phone-alt"></i> <span>🇮🇳 India: +91-7459977911</span></a>
         <a href="tel:+9779848094547"><i class="fas fa-phone-alt"></i> <span>🇳🇵 Nepal: +977-9848094547</span></a>
-        <a href="mailto:upachar.org@gmail.com"><i class="fas fa-envelope"></i> <span>upachar.org@gmail.com</span></a>
+        <a href="mailto:service@leocompters.co.in"><i class="fas fa-envelope"></i> <span>service@leocompters.co.in</span></a>
       </div>
       <div class="top-actions">
         <div class="lang-switch" id="langSwitch">
@@ -247,17 +247,17 @@
 
       <!-- Doctor Filters -->
       <div class="cost-search-box">
-        <select id="doctorCountryFilter" class="form-select" style="max-width:200px;">
+        <select id="doctorCountryFilter" class="form-select">
           <option value="all" data-i18n="selectCountry">Select Country</option>
           <option value="India">India</option>
           <option value="Nepal">Nepal</option>
         </select>
 
-        <select id="doctorDeptFilter" class="form-select" style="max-width:240px;">
+        <select id="doctorDeptFilter" class="form-select">
           <option value="all" data-i18n="selectDept">Select Department</option>
         </select>
 
-        <div style="flex-grow:1;">
+        <div style="flex-grow:1; width:100%;">
           <input type="text" id="doctorSearchInput" class="form-input" placeholder="Search Doctor by Name..." data-i18n="filterDoctorInput">
         </div>
       </div>
@@ -290,14 +290,14 @@
       </div>
 
       <div class="cost-search-box">
-        <div style="flex-grow:1; min-width:240px;">
+        <div style="flex-grow:1; width:100%;">
           <label style="font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-bottom:0.25rem; display:block;">Select Treatment / Surgery</label>
           <select id="surgeryTreatmentSelect" class="form-select">
             <option value="all">All Treatments & Surgeries</option>
           </select>
         </div>
 
-        <div style="flex-grow:1; min-width:200px;">
+        <div style="flex-grow:1; width:100%;">
           <label style="font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-bottom:0.25rem; display:block;">Select City / Country</label>
           <select id="surgeryCitySelect" class="form-select">
             <option value="all">All Cities (Delhi, Lucknow, Kathmandu)</option>
@@ -307,8 +307,8 @@
           </select>
         </div>
 
-        <div style="align-self:flex-end;">
-          <button id="surgerySearchBtn" class="btn btn-primary">
+        <div style="width:100%;">
+          <button id="surgerySearchBtn" class="btn btn-primary" style="width:100%;">
             <i class="fas fa-search"></i> <span>Search & Compare</span>
           </button>
         </div>
@@ -373,9 +373,9 @@
         <p class="section-desc" data-i18n="quoteSubtitle">Every patient is different. Submit your medical details & reports to receive an exact quotation.</p>
       </div>
 
-      <div style="max-width:800px; margin:0 auto; background:#FFF; border-radius:var(--radius-lg); padding:2.5rem; box-shadow:var(--shadow-md);">
+      <div class="form-container-card">
         <form id="personalizedQuoteForm" class="quick-form">
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+          <div class="form-row">
             <div class="form-group">
               <label>Patient Name</label>
               <input type="text" id="quoteName" class="form-input" placeholder="e.g. Ramesh Sharma" required>
@@ -386,7 +386,7 @@
             </div>
           </div>
 
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+          <div class="form-row">
             <div class="form-group">
               <label>Country / City</label>
               <select id="quoteCountry" class="form-select" required>
@@ -403,7 +403,7 @@
             </div>
           </div>
 
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+          <div class="form-row">
             <div class="form-group">
               <label>Preferred Hospital / City</label>
               <input type="text" id="quoteHospital" class="form-input" placeholder="e.g. Hospital A (Delhi) or Any Best Hospital">
@@ -414,7 +414,7 @@
             </div>
           </div>
 
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+          <div class="form-row">
             <div class="form-group">
               <label>Contact Number</label>
               <input type="tel" id="quoteContact" class="form-input" placeholder="+91 / +977 XXXXXXXXXX" required>
