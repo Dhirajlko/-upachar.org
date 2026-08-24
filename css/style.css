@@ -64,9 +64,6 @@ body {
   background-color: var(--bg-body);
   color: var(--text-dark);
   line-height: 1.6;
-  touch-action: pan-y !important;
-  overscroll-behavior: none !important;
-  overscroll-behavior-x: none !important;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -154,23 +151,31 @@ p, h1, h2, h3, h4, h5, h6, span, a, label {
 
 .ticker-content {
   position: absolute !important;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  -webkit-transform: translateY(-50%) !important;
   white-space: nowrap !important;
   will-change: transform;
-  animation: marqueeTicker 25s linear infinite;
-  display: inline-flex;
+  -webkit-animation: marqueeTicker 22s linear infinite !important;
+  animation: marqueeTicker 22s linear infinite !important;
+  display: inline-flex !important;
   align-items: center;
 }
 
 .ticker-content:hover {
-  animation-play-state: paused;
+  -webkit-animation-play-state: paused !important;
+  animation-play-state: paused !important;
   cursor: pointer;
 }
 
+@-webkit-keyframes marqueeTicker {
+  0% { -webkit-transform: translateY(-50%) translateX(100vw); transform: translateY(-50%) translateX(100vw); }
+  100% { -webkit-transform: translateY(-50%) translateX(-100%); transform: translateY(-50%) translateX(-100%); }
+}
+
 @keyframes marqueeTicker {
-  0% { transform: translate3d(100vw, -50%, 0); }
-  100% { transform: translate3d(-100%, -50%, 0); }
+  0% { -webkit-transform: translateY(-50%) translateX(100vw); transform: translateY(-50%) translateX(100vw); }
+  100% { -webkit-transform: translateY(-50%) translateX(-100%); transform: translateY(-50%) translateX(-100%); }
 }
 
 .ticker-item {

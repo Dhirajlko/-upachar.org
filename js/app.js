@@ -41,13 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function initApp() {
-    // Lock horizontal scroll so window.scrollX is ALWAYS forced to 0 ("right jaye hi naa!")
-    window.addEventListener('scroll', () => {
-      if (window.scrollX !== 0) {
-        window.scrollTo(0, window.scrollY);
-      }
-    }, { passive: true });
-
     setupLanguageSwitcher();
     setupMobileMenu();
     setupUniversalSearch();
