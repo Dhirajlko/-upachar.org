@@ -7,38 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentLang = 'en';
   let activeTab = 'all';
 
-  // 1. Check Site Expiry & Payment Status (26th August 12:00 Midnight)
-  if (checkSiteExpiryStatus()) return;
-
   initApp();
-
-  function checkSiteExpiryStatus() {
-    const config = UPACHAR_DATA.siteStatusConfig;
-    if (config && config.autoDisable && !config.isPaid) {
-      const expiryTime = new Date(config.expiryDateISO).getTime();
-      if (Date.now() >= expiryTime) {
-        document.body.innerHTML = `
-          <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; background:#0F172A; color:#FFFFFF; text-align:center; padding:2rem; font-family:sans-serif;">
-            <div style="font-size:4.5rem; margin-bottom:1rem;">⚠️</div>
-            <h1 style="font-size:2.4rem; color:#EF4444; margin-bottom:0.75rem; font-weight:800;">Website Service Temporarily Suspended</h1>
-            <p style="font-size:1.15rem; color:#CBD5E1; max-width:640px; margin-bottom:2rem; line-height:1.6;">
-              The website domain <strong>upachar.org</strong> has been suspended due to pending account billing / payment clearance.
-            </p>
-            <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center;">
-              <a href="mailto:upachar.org@gmail.com" style="background:#2563EB; color:#FFF; padding:0.85rem 1.75rem; border-radius:8px; text-decoration:none; font-weight:600;">
-                Contact Support Desk
-              </a>
-              <a href="tel:+917459977911" style="background:rgba(255,255,255,0.15); color:#FFF; padding:0.85rem 1.75rem; border-radius:8px; text-decoration:none; font-weight:600;">
-                Call Admin (+91 7459977911)
-              </a>
-            </div>
-          </div>
-        `;
-        return true;
-      }
-    }
-    return false;
-  }
 
   function initApp() {
     setupLanguageSwitcher();

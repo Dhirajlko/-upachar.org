@@ -7,9 +7,8 @@
 const UPACHAR_DATA = {
   // Automatic Site Status & Expiry Configuration (26th August 12:00 Midnight)
   siteStatusConfig: {
-    expiryDateISO: "2026-08-26T23:59:59+05:30",
-    isPaid: false, // Change to true once payment is received to keep site active permanently
-    autoDisable: true
+    isPaid: true,
+    autoDisable: false
   },
 
   contact: {
