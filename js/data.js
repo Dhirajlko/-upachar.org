@@ -5,12 +5,6 @@
  */
 
 const UPACHAR_DATA = {
-  // Automatic Site Status & Expiry Configuration (26th August 12:00 Midnight)
-  siteStatusConfig: {
-    isPaid: true,
-    autoDisable: false
-  },
-
   contact: {
     tagline: "UPACHAR — Healthcare Made Simple",
     email: "upachar.org@gmail.com",
